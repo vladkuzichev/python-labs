@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import html
 import json
 import logging
@@ -9,6 +10,7 @@ import re
 import sys
 import time
 from collections import Counter
+from dataclasses import asdict
 from collections.abc import Callable, Iterator
 from enum import Enum
 from functools import wraps
@@ -21,6 +23,7 @@ from rich.console import Console
 from rich.progress import track
 from rich.table import Table
 from rich.text import Text
+from rich.live import Live
 
 from findex.corpus import Document, iter_documents
 from findex.index import build_index
@@ -169,6 +172,59 @@ def stats_command(index_path: Path) -> None:
             "avg_doc_length": index.avg_doc_length,
         }
     )
+
+
+@app.command("crawl")
+@expected_errors
+def crawl_command(
+    seed_url: str,
+    max_pages: Annotated[int, typer.Option(min=1)] = 500,
+    concurrency: Annotated[int, typer.Option(min=1)] = 10,
+    per_host: Annotated[int, typer.Option(min=1)] = 2,
+    min_delay: Annotated[float, typer.Option(min=0)] = 0.05,
+    out: Path = Path("data/crawl.jsonl"),
+) -> None:
+    from findex.crawler.crawl import CrawlStats, crawl
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    handler = logging.FileHandler(out.parent / "crawl.log", encoding="utf-8")
+    handler.setLevel(logging.INFO)
+    handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+    log = logging.getLogger("findex.crawler")
+    log.addHandler(handler)
+    log.setLevel(logging.INFO)
+    state = CrawlStats()
+
+    async def run() -> None:
+        with (
+            out.open("w", encoding="utf-8") as stream,
+            Live(
+                console=diagnostics, refresh_per_second=4, auto_refresh=diagnostics.is_terminal
+            ) as live,
+        ):
+            async for page in crawl(
+                [seed_url],
+                max_pages=max_pages,
+                concurrency=concurrency,
+                per_host=per_host,
+                min_delay=min_delay,
+                stats=state,
+            ):
+                stream.write(json.dumps(asdict(page), ensure_ascii=False) + "\n")
+                stream.flush()
+                live.update(
+                    f"Сторінок: {state.pages}; стор./с: {state.pages_per_second:.2f}; "
+                    f"активних: {state.in_flight}; помилок: {state.errors}; "
+                    f"черга: {state.queue_depth}"
+                )
+
+    try:
+        asyncio.run(run(), debug=True)
+    finally:
+        log.removeHandler(handler)
+        handler.close()
+    console.print(f"Зібрано {state.pages} сторінок: {out}")
+
 
 
 if __name__ == "__main__":

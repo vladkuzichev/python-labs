@@ -1,0 +1,35 @@
+[
+  {
+    "concurrency": 1,
+    "pages": 200,
+    "wall_s": 4.015949100001308,
+    "pages_per_second": 49.801428011110715,
+    "errors": 0,
+    "peak_rss": 51544064,
+    "model_latency_s": 0.015,
+    "min_delay_s": 0.002,
+    "per_host": 20
+  },
+  {
+    "concurrency": 5,
+    "pages": 200,
+    "wall_s": 1.0218781000003219,
+    "pages_per_second": 195.71806069621906,
+    "errors": 0,
+    "peak_rss": 52531200,
+    "model_latency_s": 0.015,
+    "min_delay_s": 0.002,
+    "per_host": 20
+  },
+  {
+    "concurrency": 20,
+    "pages": 200,
+    "wall_s": 1.8156229000014719,
+    "pages_per_second": 110.15503274376957,
+    "errors": 0,
+    "peak_rss": 53313536,
+    "model_latency_s": 0.015,
+    "min_delay_s": 0.002,
+    "per_host": 20
+  }
+]
