@@ -1,0 +1,81 @@
+"""Інвертований індекс, який будується за один прохід потоку документів."""
+
+from __future__ import annotations
+
+import argparse
+import time
+import tracemalloc
+from collections import defaultdict
+from collections.abc import Iterable
+from dataclasses import dataclass
+from itertools import islice
+from pathlib import Path
+
+from findex.corpus import Document, iter_documents
+from findex.tokenize import tokenize
+
+
+@dataclass(frozen=True, slots=True)
+class Posting:
+    doc_id: int
+    tf: int
+    positions: tuple[int, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
+class DocMeta:
+    path: str
+    title: str
+    text: str
+
+
+@dataclass(eq=False)
+class Index:
+    postings: dict[str, list[Posting]]
+    doc_lengths: dict[int, int]
+    doc_meta: dict[int, DocMeta]
+    positions: bool = False
+
+
+def build_index(documents: Iterable[Document], *, positions: bool = False) -> Index:
+    postings: defaultdict[str, list[Posting]] = defaultdict(list)
+    lengths: dict[int, int] = {}
+    metadata: dict[int, DocMeta] = {}
+    for doc in documents:
+        if doc.doc_id in lengths:
+            raise ValueError(f"Повторний doc_id: {doc.doc_id}")
+        offsets: defaultdict[str, list[int]] = defaultdict(list)
+        length = 0
+        for offset, term in enumerate(tokenize(doc.text)):
+            offsets[term].append(offset)
+            length += 1
+        for term, values in offsets.items():
+            postings[term].append(Posting(doc.doc_id, len(values), tuple(values) if positions else ()))
+        lengths[doc.doc_id] = length
+        metadata[doc.doc_id] = DocMeta(doc.path, doc.title or doc.path, doc.text)
+    for values in postings.values():
+        values.sort(key=lambda p: p.doc_id)
+    return Index(dict(postings), lengths, metadata, positions)
+
+
+def main() -> None:
+    from findex.store import save
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("corpus", type=Path)
+    parser.add_argument("--out", type=Path, default=Path("index.bin"))
+    parser.add_argument("--positions", action="store_true")
+    parser.add_argument("--limit", type=int)
+    args = parser.parse_args()
+    tracemalloc.start()
+    started = time.perf_counter()
+    index = build_index(islice(iter_documents(args.corpus), args.limit), positions=args.positions)
+    save(index, args.out)
+    _, peak = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    print(f"documents={len(index.doc_meta)} terms={len(index.postings)} "
+          f"elapsed_s={time.perf_counter()-started:.6f} peak_bytes={peak}")
+
+
+if __name__ == "__main__":
+    main()
