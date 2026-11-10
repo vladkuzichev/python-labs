@@ -227,5 +227,18 @@ def crawl_command(
 
 
 
+@app.command("serve")
+@expected_errors
+def serve_command(
+    port: Annotated[int, typer.Option(min=1, max=65535)] = 8000,
+    workers: Annotated[int, typer.Option(min=1)] = 1,
+    host: str = "127.0.0.1",
+) -> None:
+    import uvicorn
+
+    uvicorn.run("findex.web.app:app", host=host, port=port, workers=workers)
+
+
+
 if __name__ == "__main__":
     app()

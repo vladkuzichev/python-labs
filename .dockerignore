@@ -1,0 +1,9 @@
+.venv
+.git
+data
+models
+dist
+__pycache__
+.pytest_cache
+htmlcov
+.coverage

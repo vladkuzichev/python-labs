@@ -1,0 +1,35 @@
+[
+  {
+    "target": "local-sync-1",
+    "tool": "oha 1.16.0",
+    "requests": 1000,
+    "concurrency": 50,
+    "rps": 533.2169356310646,
+    "p50": 91.945,
+    "p95": 115.244,
+    "p99": 201.575,
+    "twenty_concurrent_s": 0.05849490000036894
+  },
+  {
+    "target": "local-async-1",
+    "tool": "oha 1.16.0",
+    "requests": 1000,
+    "concurrency": 50,
+    "rps": 481.4953628144598,
+    "p50": 101.303,
+    "p95": 121.269,
+    "p99": 234.076,
+    "twenty_concurrent_s": 0.05117969999992056
+  },
+  {
+    "target": "local-sync-4",
+    "tool": "oha 1.16.0",
+    "requests": 1000,
+    "concurrency": 50,
+    "rps": 1817.4307236300344,
+    "p50": 25.146,
+    "p95": 35.627,
+    "p99": 43.28,
+    "twenty_concurrent_s": 0.03406210000139254
+  }
+]

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>findex — пошук у документації Python</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><a class="brand" href="/">findex<span> / Python docs</span></a><nav><a href="/docs">API</a><a href="/stats">Статистика</a></nav></header>
+<main><div class="eyebrow">ЛАБОРАТОРНІ РОБОТИ 1–8 · ПРОГРАМУВАННЯ PYTHON</div>
+<h1>Знайти відповідь<br>у документації.</h1><p class="intro">{{ documents }} документів стандартної бібліотеки Python. Терміни, фрази та логічні оператори в одному пошуку.</p>
+<form action="/" method="get"><label for="q">Пошуковий запит</label><div class="searchbar"><input id="q" name="q" value="{{ q }}" placeholder='Наприклад: "event loop" OR asyncio' required maxlength="1000"><button type="submit">Знайти →</button></div>
+<div class="options"><label for="scorer">Ранжування</label><select id="scorer" name="scorer"><option value="bm25" {% if scorer=='bm25' %}selected{% endif %}>BM25</option><option value="tfidf" {% if scorer=='tfidf' %}selected{% endif %}>TF-IDF</option></select></div></form>
+{% if result %}<div class="resultsmeta">Знайдено: {{ result.total }} · {{ '%.2f'|format(result.took_ms) }} мс · сторінка {{ page }}</div>
+{% for r in result.results %}<article class="result"><div class="resulttop">ДОКУМЕНТ {{ r.doc_id }}<span>{{ '%.5f'|format(r.score) }} балів</span></div><h2><a href="/doc/{{ r.doc_id }}">{{ r.title }}</a></h2><p>{{ r.snippet|safe }}</p></article>{% endfor %}
+{% if not result.results %}<p class="empty">Збігів немає. Спробуйте інші терміни або оператор OR.</p>{% endif %}
+<div class="pagination">{% if page>1 %}<a href="{{ request.url.include_query_params(page=page-1) }}">← Попередня</a>{% endif %}{% if page*5<result.total %}<a href="{{ request.url.include_query_params(page=page+1) }}">Наступна →</a>{% endif %}</div>
+{% else %}<div class="examples"><span>СПРОБУЙТЕ</span><a href="/?q=event+loop">event loop ↗</a><a href="/?q=json">json ↗</a><a href="/?q=thread+OR+queue">thread OR queue ↗</a></div>{% endif %}
+</main><footer>findex · CPython standard library · Локальний навчальний проєкт</footer></body></html>
