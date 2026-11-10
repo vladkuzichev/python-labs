@@ -50,7 +50,9 @@ def main() -> None:
     elapsed = time.perf_counter() - started
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
-    print(json.dumps({**asdict(result), "elapsed_s": elapsed, "peak_bytes": peak}, ensure_ascii=False))
+    print(
+        json.dumps({**asdict(result), "elapsed_s": elapsed, "peak_bytes": peak}, ensure_ascii=False)
+    )
 
 
 if __name__ == "__main__":

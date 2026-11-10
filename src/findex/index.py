@@ -96,8 +96,8 @@ def build_index(documents: Iterable[Document], *, positions: bool = False) -> In
             )
         lengths[doc.doc_id] = length
         metadata[doc.doc_id] = DocMeta(doc.path, doc.title or doc.path, doc.text)
-    for values in postings.values():
-        values.sort(key=lambda p: p.doc_id)
+    for posting_list in postings.values():
+        posting_list.sort(key=lambda p: p.doc_id)
     return Index(dict(postings), lengths, metadata, positions)
 
 

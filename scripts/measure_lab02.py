@@ -5,7 +5,7 @@ import pickle
 import time
 import tracemalloc
 from array import array
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from statistics import median
@@ -35,7 +35,8 @@ def representation(corpus, kind):
                 values[term][1].append(tf)
             else:
                 values.setdefault(term, []).append(
-                    PlainPosting(doc.doc_id, tf) if kind == "plain" else Posting(doc.doc_id, tf))
+                    PlainPosting(doc.doc_id, tf) if kind == "plain" else Posting(doc.doc_id, tf)
+                )
     return values
 
 
@@ -55,8 +56,11 @@ def main():
         restored = pickle.loads(payload)
         load_s = time.perf_counter() - t0
         assert len(restored) == len(values)
-        measurements["storage"].append(dict(kind=kind, peak_bytes=peak, file_bytes=len(payload),
-                                             build_s=elapsed, load_s=load_s))
+        measurements["storage"].append(
+            dict(
+                kind=kind, peak_bytes=peak, file_bytes=len(payload), build_s=elapsed, load_s=load_s
+            )
+        )
         del values, payload, restored
     index = build_index(iter_documents(corpus), positions=True)
     for suffix in [".json", ".bin"]:
@@ -68,8 +72,9 @@ def main():
         restored = load(path)
         load_s = time.perf_counter() - t0
         assert to_dict(restored) == to_dict(index)
-        measurements["formats"].append(dict(format=suffix, file_bytes=path.stat().st_size,
-                                              save_s=save_s, load_s=load_s))
+        measurements["formats"].append(
+            dict(format=suffix, file_bytes=path.stat().st_size, save_s=save_s, load_s=load_s)
+        )
     counts = sorted(index.postings, key=lambda t: (-len(index.postings[t]), t))
     for label, terms in [("common", counts[:2]), ("rare", counts[-2:])]:
         for engine in ["merge", "set"]:
@@ -78,13 +83,18 @@ def main():
             for _ in range(100):
                 t0 = time.perf_counter_ns()
                 combine(a, b, "AND", engine)
-                runs.append((time.perf_counter_ns()-t0)/1e6)
-            measurements["boolean"].append(dict(terms=terms, label=label, engine=engine,
-                                                 median_ms=median(runs)))
+                runs.append((time.perf_counter_ns() - t0) / 1e6)
+            measurements["boolean"].append(
+                dict(terms=terms, label=label, engine=engine, median_ms=median(runs))
+            )
     no_positions = build_index(iter_documents(corpus), positions=False)
-    measurements["positions"] = {"enabled_bytes":len(pickle.dumps(to_dict(index))),
-                                  "disabled_bytes":len(pickle.dumps(to_dict(no_positions)))}
-    (out / "lab02_measurements.json").write_text(json.dumps(measurements, indent=2), encoding="utf-8")
+    measurements["positions"] = {
+        "enabled_bytes": len(pickle.dumps(to_dict(index))),
+        "disabled_bytes": len(pickle.dumps(to_dict(no_positions))),
+    }
+    (out / "lab02_measurements.json").write_text(
+        json.dumps(measurements, indent=2), encoding="utf-8"
+    )
     print(json.dumps(measurements, indent=2))
 
 

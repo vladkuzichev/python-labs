@@ -55,8 +55,13 @@ def difference(a: Sequence[int], b: Sequence[int]) -> list[int]:
 def combine(a: Sequence[int], b: Sequence[int], operation: str, engine: Engine) -> list[int]:
     if engine == "set":
         left, right = set(a), set(b)
-        return sorted(left & right if operation == "AND" else left | right if operation == "OR"
-                      else left - right)
+        return sorted(
+            left & right
+            if operation == "AND"
+            else left | right
+            if operation == "OR"
+            else left - right
+        )
     if operation == "AND":
         return intersect(a, b)
     if operation == "OR":

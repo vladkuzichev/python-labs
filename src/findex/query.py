@@ -143,6 +143,7 @@ class Parser:
         return node
 
     def parse_unary(self) -> Node:
+        node: Node
         token = self.take()
         if token == "NOT":
             return Not(self.parse_unary())
@@ -158,7 +159,7 @@ class Parser:
             raise ValueError("Порожній термін або фраза")
         if token.startswith('"'):
             return Phrase(words)
-        node: Node = Term(words[0])
+        node = Term(words[0])
         for word in words[1:]:
             node = And(node, Term(word))
         return node

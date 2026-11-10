@@ -26,8 +26,16 @@ def test_merge(a, b):
     assert difference(a, b) == sorted(set(a) - set(b))
 
 
-@pytest.mark.parametrize("query,expected", [("python", [0, 1]), ("python thread", [1]),
-    ("python OR java", [0, 1, 2]), ("python NOT thread", [0]), ("unknown", [])])
+@pytest.mark.parametrize(
+    "query,expected",
+    [
+        ("python", [0, 1]),
+        ("python thread", [1]),
+        ("python OR java", [0, 1, 2]),
+        ("python NOT thread", [0]),
+        ("unknown", []),
+    ],
+)
 def test_boolean(index, query, expected):
     assert boolean_search(index, query) == expected
     assert boolean_search(index, query, engine="set") == expected

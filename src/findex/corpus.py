@@ -40,14 +40,19 @@ def iter_documents(root: Path) -> Iterator[Document]:
                             text = record["text"]
                             if not isinstance(text, str):
                                 raise ValueError("text має бути рядком")
-                            yield Document(doc_id, str(record.get("url", record.get("path", path))),
-                                           text, str(record.get("title", "")))
+                            yield Document(
+                                doc_id,
+                                str(record.get("url", record.get("path", path))),
+                                text,
+                                str(record.get("title", "")),
+                            )
                             doc_id += 1
                         except (ValueError, KeyError, TypeError) as error:
                             logger.warning("%s:%d: %s", path, line_number, error)
             else:
-                yield Document(doc_id, str(path), path.read_text(encoding="utf-8", errors="replace"),
-                               path.stem)
+                yield Document(
+                    doc_id, str(path), path.read_text(encoding="utf-8", errors="replace"), path.stem
+                )
                 doc_id += 1
         except OSError as error:
             logger.warning("Пропущено %s: %s", path, error)
