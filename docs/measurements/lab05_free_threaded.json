@@ -1,0 +1,177 @@
+[
+  {
+    "executor": "threads-free-threaded",
+    "workers": 1,
+    "runs": [
+      {
+        "wall_s": 0.2914629999995668,
+        "cpu_s": 0.296875,
+        "merge_s": 0.019736199999897508,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 50479104
+      },
+      {
+        "wall_s": 0.28963479999947594,
+        "cpu_s": 0.28125,
+        "merge_s": 0.02263889999994717,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 50475008
+      },
+      {
+        "wall_s": 0.2878246999989642,
+        "cpu_s": 0.296875,
+        "merge_s": 0.020095300000321004,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 50475008
+      }
+    ],
+    "wall_s": 0.28963479999947594,
+    "cpu_s": 0.296875,
+    "merge_s": 0.020095300000321004,
+    "parent_peak_rss": 50475008,
+    "gil_enabled": false
+  },
+  {
+    "executor": "threads-free-threaded",
+    "workers": 2,
+    "runs": [
+      {
+        "wall_s": 0.22973219999948924,
+        "cpu_s": 0.25,
+        "merge_s": 0.03729120000025432,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 52551680
+      },
+      {
+        "wall_s": 0.22915930000090157,
+        "cpu_s": 0.359375,
+        "merge_s": 0.03779549999853771,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 52535296
+      },
+      {
+        "wall_s": 0.2318236999999499,
+        "cpu_s": 0.3125,
+        "merge_s": 0.0432435999991867,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 52490240
+      }
+    ],
+    "wall_s": 0.22973219999948924,
+    "cpu_s": 0.3125,
+    "merge_s": 0.03779549999853771,
+    "parent_peak_rss": 52535296,
+    "gil_enabled": false
+  },
+  {
+    "executor": "threads-free-threaded",
+    "workers": 4,
+    "runs": [
+      {
+        "wall_s": 0.2043443999991723,
+        "cpu_s": 0.375,
+        "merge_s": 0.049550099998668884,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 54059008
+      },
+      {
+        "wall_s": 0.20969499999955588,
+        "cpu_s": 0.234375,
+        "merge_s": 0.05420059999960358,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 54005760
+      },
+      {
+        "wall_s": 0.2003671000002214,
+        "cpu_s": 0.296875,
+        "merge_s": 0.049024500000086846,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 54054912
+      }
+    ],
+    "wall_s": 0.2043443999991723,
+    "cpu_s": 0.296875,
+    "merge_s": 0.049550099998668884,
+    "parent_peak_rss": 54054912,
+    "gil_enabled": false
+  },
+  {
+    "executor": "threads-free-threaded",
+    "workers": 8,
+    "runs": [
+      {
+        "wall_s": 0.22042060000057973,
+        "cpu_s": 0.5625,
+        "merge_s": 0.06013910000001488,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 57139200
+      },
+      {
+        "wall_s": 0.21884730000056152,
+        "cpu_s": 0.421875,
+        "merge_s": 0.05741110000053595,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 57397248
+      },
+      {
+        "wall_s": 0.2127942000006442,
+        "cpu_s": 0.453125,
+        "merge_s": 0.05409940000026836,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 57376768
+      }
+    ],
+    "wall_s": 0.21884730000056152,
+    "cpu_s": 0.453125,
+    "merge_s": 0.05741110000053595,
+    "parent_peak_rss": 57376768,
+    "gil_enabled": false
+  },
+  {
+    "executor": "threads-free-threaded",
+    "workers": 16,
+    "runs": [
+      {
+        "wall_s": 0.3165917999995145,
+        "cpu_s": 1.390625,
+        "merge_s": 0.07137510000029579,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 63246336
+      },
+      {
+        "wall_s": 0.3274758000006841,
+        "cpu_s": 0.859375,
+        "merge_s": 0.07303890000002866,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 63152128
+      },
+      {
+        "wall_s": 0.3050239000003785,
+        "cpu_s": 0.96875,
+        "merge_s": 0.06123050000132935,
+        "gil_enabled": false,
+        "documents": 2873,
+        "parent_peak_rss": 63172608
+      }
+    ],
+    "wall_s": 0.3165917999995145,
+    "cpu_s": 0.96875,
+    "merge_s": 0.07137510000029579,
+    "parent_peak_rss": 63172608,
+    "gil_enabled": false
+  }
+]

@@ -24,6 +24,7 @@ from rich.text import Text
 
 from findex.corpus import Document, iter_documents
 from findex.index import build_index
+from findex.parallel import build_parallel
 from findex.scoring import BM25, TfIdf
 from findex.search import search as run_search
 from findex.store import load, save
@@ -40,6 +41,12 @@ diagnostics = Console(stderr=True)
 class EngineOption(str, Enum):
     merge = "merge"
     set = "set"
+
+
+class ExecutorOption(str, Enum):
+    serial="serial"
+    threads="threads"
+    processes="processes"
 
 
 def expected_errors[**P, T](function: Callable[P, T]) -> Callable[P, T]:
@@ -71,6 +78,8 @@ def index_command(
     out: Annotated[Path, typer.Option("--out")] = Path("data/index.bin"),
     positions: bool = False,
     limit: Annotated[int | None, typer.Option(min=0)] = None,
+    workers: Annotated[int, typer.Option(min=1)] = 1,
+    executor: ExecutorOption = ExecutorOption.serial,
 ) -> None:
     def documents() -> Iterator[Document]:
         yield from track(
@@ -81,7 +90,11 @@ def index_command(
         )
 
     started = time.perf_counter()
-    index = build_index(documents(), positions=positions)
+    if executor == ExecutorOption.serial and workers == 1:
+        index = build_index(documents(), positions=positions)
+    else:
+        index, metrics = build_parallel(corpus, workers=workers, executor=executor.value, positions=positions, limit=limit)
+        logging.getLogger(__name__).info("build metrics=%s", metrics)
     save(index, out)
     console.print(
         f"Документів: {index.num_docs}; термінів: {len(index)}; "
