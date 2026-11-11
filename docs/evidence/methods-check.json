@@ -1,0 +1,87 @@
+[
+  {
+    "file": "courses/python/README.md",
+    "matches_current_github_blob": true,
+    "sha": "54a6db924538c0231b5610f288142d22b6ff9158"
+  },
+  {
+    "file": "courses/python/lab-01-iterators-and-the-corpus.md",
+    "matches_current_github_blob": true,
+    "sha": "2162d4cc81517beca632fcfd63301ea491efd1fa"
+  },
+  {
+    "file": "courses/python/lab-01-iterators-and-the-corpus.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "68ddbbca1ac69775cf601f2eb65afe67dcd03a77"
+  },
+  {
+    "file": "courses/python/lab-02-data-structures-and-the-inverted-index.md",
+    "matches_current_github_blob": true,
+    "sha": "30990711adff793c84c0c48f7fc7b7c9fb80372c"
+  },
+  {
+    "file": "courses/python/lab-02-data-structures-and-the-inverted-index.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "98b6a59f4f7a1ad7206cd58393b80ed39755a220"
+  },
+  {
+    "file": "courses/python/lab-03-the-object-model-and-ranking.md",
+    "matches_current_github_blob": true,
+    "sha": "6b529d4e9b182e61d30434316ae034fcb252111d"
+  },
+  {
+    "file": "courses/python/lab-03-the-object-model-and-ranking.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "51811f509f50bcdbc48b0b04570c639a4842bba7"
+  },
+  {
+    "file": "courses/python/lab-04-typing-testing-packaging-cli.md",
+    "matches_current_github_blob": true,
+    "sha": "0f67684ab16464df1eb9d447065a12b4f37c54ba"
+  },
+  {
+    "file": "courses/python/lab-04-typing-testing-packaging-cli.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "a30a1c7338f8f864848fa7e7e31a43d88ba2a21a"
+  },
+  {
+    "file": "courses/python/lab-05-concurrency-and-the-gil.md",
+    "matches_current_github_blob": true,
+    "sha": "037685f4c9e30514b4f1b50247b7dee774a19ae2"
+  },
+  {
+    "file": "courses/python/lab-05-concurrency-and-the-gil.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "131449ca23ce74627223f155f977b83479b74a4e"
+  },
+  {
+    "file": "courses/python/lab-06-asyncio-crawler.md",
+    "matches_current_github_blob": true,
+    "sha": "63b1d20ee29e1f28e490f9d882a8526dab663516"
+  },
+  {
+    "file": "courses/python/lab-06-asyncio-crawler.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "6c07a1f2826048d280c6d043e374e7e40b180b03"
+  },
+  {
+    "file": "courses/python/lab-07-fastapi-web-search.md",
+    "matches_current_github_blob": true,
+    "sha": "6ff37f73e66e98b4665d363af53128c1fc4d58be"
+  },
+  {
+    "file": "courses/python/lab-07-fastapi-web-search.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "e3cd85a6972ceeee653c1af380103ed0a1ee081f"
+  },
+  {
+    "file": "courses/python/lab-08-performance-and-semantic-search.md",
+    "matches_current_github_blob": true,
+    "sha": "eda1a0f4c68dc9c897e56f5931fc96294676215c"
+  },
+  {
+    "file": "courses/python/lab-08-performance-and-semantic-search.notes.md",
+    "matches_current_github_blob": true,
+    "sha": "0502ccbd355878ba0350ec67883069586884adc1"
+  }
+]

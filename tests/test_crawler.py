@@ -1,4 +1,5 @@
 import asyncio
+import threading
 
 import httpx
 import pytest
@@ -146,3 +147,44 @@ def test_retry_after():
     assert retry_delay("2", 0) == 2
     assert 0 <= retry_delay("Mon, 01 Jan 2001 00:00:00 GMT", 0) <= 0.1
     assert retry_delay("bad", 0) >= 0.1
+
+
+def test_client_initialization_does_not_block_event_loop(monkeypatch):
+    original = httpx.AsyncClient
+    started = threading.Event()
+    release = threading.Event()
+    completed = threading.Event()
+
+    def delayed_client(**kwargs):
+        started.set()
+        release.wait(2)
+        completed.set()
+        return original(**kwargs)
+
+    monkeypatch.setattr(httpx, "AsyncClient", delayed_client)
+
+    def handler(request):
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(
+            200, headers={"content-type": "text/html"}, text="<title>Ready</title>page"
+        )
+
+    async def run():
+        generator = crawl(
+            ["http://local/"], max_pages=1, min_delay=0, transport=httpx.MockTransport(handler)
+        )
+        pending = asyncio.create_task(anext(generator))
+        try:
+            assert await asyncio.to_thread(started.wait, 1)
+            # The loop must make progress while synchronous initialization is
+            # deliberately held open. The old code waits two seconds here.
+            await asyncio.sleep(0)
+            assert not completed.is_set()
+        finally:
+            release.set()
+        page = await asyncio.wait_for(pending, 3)
+        assert page.title == "Ready"
+        await generator.aclose()
+
+    asyncio.run(run(), debug=True)

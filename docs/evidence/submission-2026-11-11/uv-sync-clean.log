@@ -1,0 +1,6 @@
+
+STDERR:
+error: Failed to download `onnxruntime==1.22.0`
+  cause: Network connectivity is disabled, but the requested data wasn't found in the cache: https://files.pythonhosted.org/packages/3e/89/2f64e250945fa87140fb917ba377d6d0e9122e029c8512f389a9b7f953f4/onnxruntime-1.22.0-cp313-cp313-win_amd64.whl
+
+hint: `onnxruntime` (v1.22.0) was included because `findex` (v1.0.0) depends on `onnxruntime`

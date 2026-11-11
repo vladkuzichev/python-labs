@@ -126,7 +126,12 @@ async def crawl(
 
     for seed in seed_urls:
         enqueue(seed)
-    async with httpx.AsyncClient(transport=transport, headers={"User-Agent": user_agent}) as client:
+    # SSL-context initialization can read certificate files synchronously. Keep
+    # it off the event loop; the client itself is used by the loop afterwards.
+    prepared_client = await asyncio.to_thread(
+        httpx.AsyncClient, transport=transport, headers={"User-Agent": user_agent}
+    )
+    async with prepared_client as client:
         robots = RobotsCache(client, user_agent)
 
         async def worker() -> None:

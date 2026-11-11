@@ -10,6 +10,7 @@ from findex.store import load
 
 
 def main():
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
     logging.basicConfig(level=logging.INFO)
     index = load(Path("data/index.bin"))
     labels = json.loads(Path("evaluation/qrels.json").read_text(encoding="utf-8"))
@@ -25,7 +26,9 @@ def main():
         rows.append(row)
     search(index, "event loop")
     search(index, "event loop")
-    Path("../Tests/lab03_precision.json").write_text(json.dumps(rows, indent=2), encoding="utf-8")
+    Path("data/measurements/lab03_precision.json").write_text(
+        json.dumps(rows, indent=2), encoding="utf-8"
+    )
     print(json.dumps(rows, indent=2))
 
 

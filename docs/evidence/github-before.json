@@ -1,0 +1,204 @@
+{
+  "verified_at": "2026-11-11",
+  "repo": {
+    "url": "https://github.com/editlikeorigin-afk/findex-python-labs",
+    "visibility": "public",
+    "main": "b02d1be2e94758d80bd902f0db0ca8703cb4e4e5"
+  },
+  "ci": {
+    "id": 43021534036,
+    "url": "https://github.com/editlikeorigin-afk/findex-python-labs/actions/runs/43021534036",
+    "status": "completed",
+    "conclusion": "success",
+    "sha": "b02d1be2e94758d80bd902f0db0ca8703cb4e4e5",
+    "finished": "2026-11-11T12:35:40Z"
+  },
+  "tags": [
+    {
+      "ref": "refs/tags/lab-01",
+      "sha": "2f2113a8bfd5f7408b96867c4c9e60dc8ca3539b"
+    },
+    {
+      "ref": "refs/tags/lab-02",
+      "sha": "4b7f67eed11095dd617b9f4c5b21f9b1632b8644"
+    },
+    {
+      "ref": "refs/tags/lab-03",
+      "sha": "d38c62162f4ec9a4aa7b6b945af4913d31849a8b"
+    },
+    {
+      "ref": "refs/tags/lab-04",
+      "sha": "e70bf8900b698d32a71559fc4b8effe63b54ff6c"
+    },
+    {
+      "ref": "refs/tags/lab-05",
+      "sha": "1f5e58e94ab6c83737b262f1364ced2c125cdf87"
+    },
+    {
+      "ref": "refs/tags/lab-06",
+      "sha": "bbd7f18e7c3b026a9b92b9d480e177e11f6e00d7"
+    },
+    {
+      "ref": "refs/tags/lab-07",
+      "sha": "1790984be72a4b2c97a1957aa80310c5856b3a75"
+    },
+    {
+      "ref": "refs/tags/lab-08",
+      "sha": "b02d1be2e94758d80bd902f0db0ca8703cb4e4e5"
+    },
+    {
+      "ref": "refs/tags/v0.4.0",
+      "sha": "e70bf8900b698d32a71559fc4b8effe63b54ff6c"
+    },
+    {
+      "ref": "refs/tags/v0.7.0",
+      "sha": "1790984be72a4b2c97a1957aa80310c5856b3a75"
+    },
+    {
+      "ref": "refs/tags/v1.0.0",
+      "sha": "b02d1be2e94758d80bd902f0db0ca8703cb4e4e5"
+    }
+  ],
+  "releases": [],
+  "teacher": {
+    "tree_sha": "f5adca5940a5d438d3ead971c7050ee81b8f0ac0",
+    "files": [
+      {
+        "path": "courses/python/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "54a6db924538c0231b5610f288142d22b6ff9158",
+        "size": 10602,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/54a6db924538c0231b5610f288142d22b6ff9158"
+      },
+      {
+        "path": "courses/python/lab-01-iterators-and-the-corpus.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2162d4cc81517beca632fcfd63301ea491efd1fa",
+        "size": 20933,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/2162d4cc81517beca632fcfd63301ea491efd1fa"
+      },
+      {
+        "path": "courses/python/lab-01-iterators-and-the-corpus.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "68ddbbca1ac69775cf601f2eb65afe67dcd03a77",
+        "size": 12746,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/68ddbbca1ac69775cf601f2eb65afe67dcd03a77"
+      },
+      {
+        "path": "courses/python/lab-02-data-structures-and-the-inverted-index.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "30990711adff793c84c0c48f7fc7b7c9fb80372c",
+        "size": 17897,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/30990711adff793c84c0c48f7fc7b7c9fb80372c"
+      },
+      {
+        "path": "courses/python/lab-02-data-structures-and-the-inverted-index.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98b6a59f4f7a1ad7206cd58393b80ed39755a220",
+        "size": 7436,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/98b6a59f4f7a1ad7206cd58393b80ed39755a220"
+      },
+      {
+        "path": "courses/python/lab-03-the-object-model-and-ranking.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6b529d4e9b182e61d30434316ae034fcb252111d",
+        "size": 19834,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/6b529d4e9b182e61d30434316ae034fcb252111d"
+      },
+      {
+        "path": "courses/python/lab-03-the-object-model-and-ranking.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "51811f509f50bcdbc48b0b04570c639a4842bba7",
+        "size": 6875,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/51811f509f50bcdbc48b0b04570c639a4842bba7"
+      },
+      {
+        "path": "courses/python/lab-04-typing-testing-packaging-cli.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f67684ab16464df1eb9d447065a12b4f37c54ba",
+        "size": 17950,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/0f67684ab16464df1eb9d447065a12b4f37c54ba"
+      },
+      {
+        "path": "courses/python/lab-04-typing-testing-packaging-cli.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a30a1c7338f8f864848fa7e7e31a43d88ba2a21a",
+        "size": 5790,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/a30a1c7338f8f864848fa7e7e31a43d88ba2a21a"
+      },
+      {
+        "path": "courses/python/lab-05-concurrency-and-the-gil.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "037685f4c9e30514b4f1b50247b7dee774a19ae2",
+        "size": 18101,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/037685f4c9e30514b4f1b50247b7dee774a19ae2"
+      },
+      {
+        "path": "courses/python/lab-05-concurrency-and-the-gil.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "131449ca23ce74627223f155f977b83479b74a4e",
+        "size": 7061,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/131449ca23ce74627223f155f977b83479b74a4e"
+      },
+      {
+        "path": "courses/python/lab-06-asyncio-crawler.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "63b1d20ee29e1f28e490f9d882a8526dab663516",
+        "size": 18410,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/63b1d20ee29e1f28e490f9d882a8526dab663516"
+      },
+      {
+        "path": "courses/python/lab-06-asyncio-crawler.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c07a1f2826048d280c6d043e374e7e40b180b03",
+        "size": 7904,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/6c07a1f2826048d280c6d043e374e7e40b180b03"
+      },
+      {
+        "path": "courses/python/lab-07-fastapi-web-search.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ff37f73e66e98b4665d363af53128c1fc4d58be",
+        "size": 18298,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/6ff37f73e66e98b4665d363af53128c1fc4d58be"
+      },
+      {
+        "path": "courses/python/lab-07-fastapi-web-search.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e3cd85a6972ceeee653c1af380103ed0a1ee081f",
+        "size": 6358,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/e3cd85a6972ceeee653c1af380103ed0a1ee081f"
+      },
+      {
+        "path": "courses/python/lab-08-performance-and-semantic-search.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eda1a0f4c68dc9c897e56f5931fc96294676215c",
+        "size": 19852,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/eda1a0f4c68dc9c897e56f5931fc96294676215c"
+      },
+      {
+        "path": "courses/python/lab-08-performance-and-semantic-search.notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0502ccbd355878ba0350ec67883069586884adc1",
+        "size": 6573,
+        "url": "https://api.github.com/repos/rmalkevy/Programming-Practice-Projects/git/blobs/0502ccbd355878ba0350ec67883069586884adc1"
+      }
+    ]
+  }
+}

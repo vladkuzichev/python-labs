@@ -1,0 +1,22 @@
+{
+  "environment": "Windows 11 x64, CPython 3.13.18, Scalene 2.4.0; same 2873-document corpus",
+  "stage": "supplemental audit after original measurements; not a before-change profile",
+  "exit_code": 0,
+  "command": "python -m scalene run --cpu-only --profile-all --program-path . --profile-only findex --cpu-percent-threshold 0 --cpu-sampling-rate 0.005 -o docs/scalene-index-audit.json scripts/profile_workload.py index --repeat 5000",
+  "functions": [
+    {
+      "file": "corpus.py",
+      "function": "iter_documents",
+      "python_percent": 13.155933269834838,
+      "native_percent": 67.2516290167633,
+      "system_percent": 12.302822727002015
+    },
+    {
+      "file": "index.py",
+      "function": "build_index",
+      "python_percent": 0.04703144263131343,
+      "native_percent": 2.5838969146700146,
+      "system_percent": 0.2940380866991673
+    }
+  ]
+}

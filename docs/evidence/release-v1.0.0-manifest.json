@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "source_tag": "lab-08",
+  "source_sha": "b02d1be2e94758d80bd902f0db0ca8703cb4e4e5",
+  "wheel_python_files_match_tag": true,
+  "sha256": {
+    "findex-1.0.0-py3-none-any.whl": "0af2698b3369fa8d897d7e712e9383c5a7fb9effe53a0ff6767c3967cebd790b",
+    "findex-1.0.0.tar.gz": "10d3efd866323c07f3baaa8e6d5bd6bcc29349061b4e4a8865dbeb2e6aeb3e7c"
+  },
+  "published": false
+}

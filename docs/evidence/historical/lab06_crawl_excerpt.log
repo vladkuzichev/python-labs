@@ -1,0 +1,30 @@
+2026-11-10 20:14:02,372 WARNING asyncio Executing <Task pending name='Task-1' coro=<main() running at <lab_python>\READY_TO_SUBMIT\Project\scripts\benchmark_crawler.py:20> cb=[_run_until_complete_cb() at <lab_python>\_work\runtime\python\Lib\asyncio\base_events.py:181] created at <lab_python>\_work\runtime\python\Lib\asyncio\runners.py:101> took 0.334 seconds
+2026-11-10 20:14:02,386 INFO httpx HTTP Request: POST http://127.0.0.1:8766/reset "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,406 INFO httpx HTTP Request: GET http://127.0.0.1:8766/robots.txt "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,407 INFO findex.crawler.fetch url=http://127.0.0.1:8766/robots.txt status=200 bytes=42 elapsed_s=0.00934 attempt=1
+2026-11-10 20:14:02,426 INFO httpx HTTP Request: GET http://127.0.0.1:8766/ "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,427 INFO findex.crawler.fetch url=http://127.0.0.1:8766/ status=200 bytes=7792 elapsed_s=0.01926 attempt=1
+2026-11-10 20:14:02,451 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/0 "HTTP/1.1 429 Too Many Requests"
+2026-11-10 20:14:02,452 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/0 status=429 bytes=15 elapsed_s=0.02092 attempt=1
+2026-11-10 20:14:02,452 WARNING findex.crawler.fetch retry url=http://127.0.0.1:8766/page/0 status=429 delay_s=0.000
+2026-11-10 20:14:02,471 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/0 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,472 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/0 status=200 bytes=1842 elapsed_s=0.04088 attempt=2
+2026-11-10 20:14:02,491 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/1 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,491 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/1 status=200 bytes=210 elapsed_s=0.01886 attempt=1
+2026-11-10 20:14:02,511 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/2 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,512 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/2 status=200 bytes=291 elapsed_s=0.01966 attempt=1
+2026-11-10 20:14:02,530 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/3 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,530 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/3 status=200 bytes=994 elapsed_s=0.01810 attempt=1
+2026-11-10 20:14:02,549 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/4 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,549 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/4 status=200 bytes=187 elapsed_s=0.01830 attempt=1
+2026-11-10 20:14:02,569 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/5 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,569 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/5 status=200 bytes=397 elapsed_s=0.01938 attempt=1
+2026-11-10 20:14:02,588 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/6 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,589 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/6 status=200 bytes=452 elapsed_s=0.01864 attempt=1
+2026-11-10 20:14:02,608 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/7 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,609 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/7 status=200 bytes=265 elapsed_s=0.01923 attempt=1
+2026-11-10 20:14:02,629 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/8 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,630 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/8 status=200 bytes=312 elapsed_s=0.02011 attempt=1
+2026-11-10 20:14:02,649 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/9 "HTTP/1.1 200 OK"
+2026-11-10 20:14:02,650 INFO findex.crawler.fetch url=http://127.0.0.1:8766/page/9 status=200 bytes=211 elapsed_s=0.01988 attempt=1
+2026-11-10 20:14:02,670 INFO httpx HTTP Request: GET http://127.0.0.1:8766/page/10 "HTTP/1.1 200 OK"

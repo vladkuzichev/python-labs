@@ -1,0 +1,330 @@
+[
+  {
+    "query": "event loop",
+    "relevant": [
+      266,
+      271,
+      272,
+      284,
+      285
+    ],
+    "tfidf": {
+      "p_at_5": 0.2,
+      "ids": [
+        284,
+        286,
+        359,
+        358,
+        299
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.2,
+      "ids": [
+        286,
+        299,
+        284,
+        436,
+        298
+      ]
+    }
+  },
+  {
+    "query": "json",
+    "relevant": [
+      1349,
+      1350,
+      1351,
+      1352,
+      1353
+    ],
+    "tfidf": {
+      "p_at_5": 0.8,
+      "ids": [
+        1349,
+        1353,
+        1350,
+        1351,
+        1362
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.2,
+      "ids": [
+        1362,
+        1349,
+        1356,
+        1360,
+        1357
+      ]
+    }
+  },
+  {
+    "query": "regular expression",
+    "relevant": [
+      1813,
+      1814,
+      1815,
+      1816,
+      1820
+    ],
+    "tfidf": {
+      "p_at_5": 0.2,
+      "ids": [
+        1813,
+        980,
+        1822,
+        1028,
+        2544
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.2,
+      "ids": [
+        980,
+        1822,
+        1028,
+        2544,
+        1813
+      ]
+    }
+  },
+  {
+    "query": "thread",
+    "relevant": [
+      2060,
+      2062,
+      2085,
+      2086,
+      2087
+    ],
+    "tfidf": {
+      "p_at_5": 0.4,
+      "ids": [
+        2087,
+        2089,
+        2091,
+        2062,
+        403
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.2,
+      "ids": [
+        2067,
+        2062,
+        2089,
+        1151,
+        2091
+      ]
+    }
+  },
+  {
+    "query": "queue",
+    "relevant": [
+      1785,
+      1786,
+      1790,
+      1791,
+      1789
+    ],
+    "tfidf": {
+      "p_at_5": 0.2,
+      "ids": [
+        348,
+        1789,
+        357,
+        1781,
+        351
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.4,
+      "ids": [
+        348,
+        351,
+        1789,
+        353,
+        1790
+      ]
+    }
+  },
+  {
+    "query": "cache",
+    "relevant": [
+      1010
+    ],
+    "tfidf": {
+      "p_at_5": 0.2,
+      "ids": [
+        1228,
+        1010,
+        1846,
+        970,
+        24
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.2,
+      "ids": [
+        1228,
+        1010,
+        24,
+        1365,
+        1366
+      ]
+    }
+  },
+  {
+    "query": "gzip file",
+    "relevant": [
+      1040,
+      1041
+    ],
+    "tfidf": {
+      "p_at_5": 0.4,
+      "ids": [
+        2020,
+        1040,
+        1041,
+        1043,
+        1039
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.4,
+      "ids": [
+        1041,
+        1043,
+        1039,
+        2020,
+        1040
+      ]
+    }
+  },
+  {
+    "query": "socket",
+    "relevant": [
+      1912,
+      1914,
+      1915
+    ],
+    "tfidf": {
+      "p_at_5": 0.4,
+      "ids": [
+        1908,
+        295,
+        1914,
+        1912,
+        1916
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.0,
+      "ids": [
+        1916,
+        1923,
+        1909,
+        1463,
+        1908
+      ]
+    }
+  },
+  {
+    "query": "url parse",
+    "relevant": [
+      2579,
+      2580,
+      2581,
+      2586,
+      2587
+    ],
+    "tfidf": {
+      "p_at_5": 0.6,
+      "ids": [
+        2579,
+        2580,
+        2581,
+        1500,
+        2582
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.2,
+      "ids": [
+        2584,
+        2593,
+        2582,
+        2583,
+        2581
+      ]
+    }
+  },
+  {
+    "query": "file digest",
+    "relevant": [
+      1044
+    ],
+    "tfidf": {
+      "p_at_5": 0.2,
+      "ids": [
+        1044,
+        2594
+      ]
+    },
+    "bm25": {
+      "p_at_5": 0.2,
+      "ids": [
+        1044,
+        2594
+      ]
+    }
+  }
+]
+
+STDERR:
+INFO:findex.instrument:load elapsed_ms=113.670500
+INFO:findex.search:query_cache hit=False hits=0 misses=1
+INFO:findex.instrument:search elapsed_ms=0.522600
+INFO:findex.search:query_cache hit=True hits=1 misses=1
+INFO:findex.instrument:search elapsed_ms=0.337200
+INFO:findex.search:query_cache hit=False hits=1 misses=2
+INFO:findex.instrument:search elapsed_ms=0.497100
+INFO:findex.search:query_cache hit=True hits=2 misses=2
+INFO:findex.instrument:search elapsed_ms=0.347200
+INFO:findex.search:query_cache hit=False hits=2 misses=3
+INFO:findex.instrument:search elapsed_ms=0.400300
+INFO:findex.search:query_cache hit=True hits=3 misses=3
+INFO:findex.instrument:search elapsed_ms=0.332700
+INFO:findex.search:query_cache hit=False hits=3 misses=4
+INFO:findex.instrument:search elapsed_ms=0.294100
+INFO:findex.search:query_cache hit=True hits=4 misses=4
+INFO:findex.instrument:search elapsed_ms=0.225300
+INFO:findex.search:query_cache hit=False hits=4 misses=5
+INFO:findex.instrument:search elapsed_ms=0.263700
+INFO:findex.search:query_cache hit=True hits=5 misses=5
+INFO:findex.instrument:search elapsed_ms=0.213100
+INFO:findex.search:query_cache hit=False hits=5 misses=6
+INFO:findex.instrument:search elapsed_ms=0.291800
+INFO:findex.search:query_cache hit=True hits=6 misses=6
+INFO:findex.instrument:search elapsed_ms=0.188100
+INFO:findex.search:query_cache hit=False hits=6 misses=7
+INFO:findex.instrument:search elapsed_ms=0.306300
+INFO:findex.search:query_cache hit=True hits=7 misses=7
+INFO:findex.instrument:search elapsed_ms=0.219300
+INFO:findex.search:query_cache hit=False hits=7 misses=8
+INFO:findex.instrument:search elapsed_ms=0.372200
+INFO:findex.search:query_cache hit=True hits=8 misses=8
+INFO:findex.instrument:search elapsed_ms=0.285400
+INFO:findex.search:query_cache hit=False hits=8 misses=9
+INFO:findex.instrument:search elapsed_ms=0.309300
+INFO:findex.search:query_cache hit=True hits=9 misses=9
+INFO:findex.instrument:search elapsed_ms=0.175300
+INFO:findex.search:query_cache hit=False hits=9 misses=10
+INFO:findex.instrument:search elapsed_ms=0.233400
+INFO:findex.search:query_cache hit=True hits=10 misses=10
+INFO:findex.instrument:search elapsed_ms=0.147800
+INFO:findex.search:query_cache hit=True hits=11 misses=10
+INFO:findex.instrument:search elapsed_ms=0.432000
+INFO:findex.search:query_cache hit=True hits=12 misses=10
+INFO:findex.instrument:search elapsed_ms=0.418300

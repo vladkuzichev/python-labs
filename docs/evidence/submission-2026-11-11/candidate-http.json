@@ -1,0 +1,57 @@
+[
+  {
+    "path": "/health",
+    "status": 200,
+    "bytes": 15
+  },
+  {
+    "path": "/stats",
+    "status": 200,
+    "bytes": 105
+  },
+  {
+    "path": "/",
+    "status": 200,
+    "bytes": 1853
+  },
+  {
+    "path": "/docs",
+    "status": 200,
+    "bytes": 930
+  },
+  {
+    "path": "/doc/0",
+    "status": 200,
+    "bytes": 2432
+  },
+  {
+    "path": "/docs/0",
+    "status": 200,
+    "bytes": 1857
+  },
+  {
+    "path": "/docs/999999",
+    "status": 404,
+    "bytes": 51
+  },
+  {
+    "path": "/search?q=python&k=0",
+    "status": 422,
+    "bytes": 140
+  },
+  {
+    "path": "/search?q=python&mode=keyword",
+    "status": 200,
+    "bytes": 2622
+  },
+  {
+    "path": "/search?q=memoization&mode=semantic",
+    "status": 200,
+    "bytes": 2290
+  },
+  {
+    "path": "/search?q=decompression&mode=hybrid",
+    "status": 200,
+    "bytes": 2561
+  }
+]

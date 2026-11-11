@@ -1,0 +1,16 @@
+INFO:     Started server process [16896]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:49424 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49425 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49428 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49429 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49430 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49431 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49432 - "GET /doc/0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49433 - "GET /docs/0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49434 - "GET /docs/999999 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49435 - "GET /search?q=python&k=0 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:49436 - "GET /search?q=python&mode=keyword HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49437 - "GET /search?q=memoization&mode=semantic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49438 - "GET /search?q=decompression&mode=hybrid HTTP/1.1" 200 OK

@@ -10,6 +10,7 @@ from findex.store import load
 
 
 def main():
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
     index = load(Path("data/index.bin"))
     rows = []
     rare = "zscore"
@@ -78,7 +79,7 @@ def main():
             "long_score": long_score,
         }
     )
-    Path("../Tests/lab03_sanity_corpus.json").write_text(
+    Path("data/measurements/lab03_sanity_corpus.json").write_text(
         json.dumps(rows, indent=2), encoding="utf-8"
     )
     print(json.dumps(rows, indent=2))

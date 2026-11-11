@@ -1,0 +1,198 @@
+[
+  {
+    "lab": 1,
+    "file": "Lab_01.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "tokenize.py",
+        "symbol": "tokenize",
+        "matches_current_source": true
+      },
+      {
+        "file": "corpus.py",
+        "symbol": "iter_documents",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "fc113d51bbca617d04e82a52fba0f86bd8939a1e09931336a19c35c05d4fe961"
+  },
+  {
+    "lab": 2,
+    "file": "Lab_02.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "index.py",
+        "symbol": "Posting",
+        "matches_current_source": true
+      },
+      {
+        "file": "boolean.py",
+        "symbol": "intersect",
+        "matches_current_source": true
+      },
+      {
+        "file": "store.py",
+        "symbol": "load",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "8cf43b8a75fd964735e362dd3d187687356ec6288b191f090ab20867808a8584"
+  },
+  {
+    "lab": 3,
+    "file": "Lab_03.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "scoring.py",
+        "symbol": "BM25",
+        "matches_current_source": true
+      },
+      {
+        "file": "query.py",
+        "symbol": "Parser.parse_or",
+        "matches_current_source": true
+      },
+      {
+        "file": "search.py",
+        "symbol": "candidate_ids",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "9a10fb682033d955ee9fdb556b31035b064130a6057d75395bea66777dd133de"
+  },
+  {
+    "lab": 4,
+    "file": "Lab_04.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "cli.py",
+        "symbol": "expected_errors",
+        "matches_current_source": true
+      },
+      {
+        "file": "cli.py",
+        "symbol": "configure",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "87ded7b8d201d685cfd830d71c3f033e1a4b6de7758d315dc1fa9df12e1bdcfe"
+  },
+  {
+    "lab": 5,
+    "file": "Lab_05.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "parallel.py",
+        "symbol": "build_partial",
+        "matches_current_source": true
+      },
+      {
+        "file": "parallel.py",
+        "symbol": "build_parallel",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "82dd1420e1885ed3e8666df8b30963bc6d0c5ff946c42a33128292aea62c542d"
+  },
+  {
+    "lab": 6,
+    "file": "Lab_06.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "crawler/fetch.py",
+        "symbol": "fetch",
+        "matches_current_source": true
+      },
+      {
+        "file": "crawler/crawl.py",
+        "symbol": "canonicalize",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "a84887db37bf5eece09f82b6818de978c1a96f90fc834535a4078b192be491a6"
+  },
+  {
+    "lab": 7,
+    "file": "Lab_07.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "web/app.py",
+        "symbol": "get_index",
+        "matches_current_source": true
+      },
+      {
+        "file": "web/app.py",
+        "symbol": "execute",
+        "matches_current_source": true
+      },
+      {
+        "file": "web/settings.py",
+        "symbol": "Settings",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "45d8a3a082a7c9160358928e451e073f28f694acab6120cd9a8443c5d6dfa2ba"
+  },
+  {
+    "lab": 8,
+    "file": "Lab_08.docx",
+    "title_unchanged": true,
+    "measurements_unchanged": true,
+    "tables_match_original_results": true,
+    "code_snippets": [
+      {
+        "file": "vector.py",
+        "symbol": "search_numpy",
+        "matches_current_source": true
+      },
+      {
+        "file": "semantic.py",
+        "symbol": "MiniLM.encode",
+        "matches_current_source": true
+      },
+      {
+        "file": "semantic.py",
+        "symbol": "reciprocal_rank_fusion",
+        "matches_current_source": true
+      }
+    ],
+    "impersonal_ukrainian_conclusion": true,
+    "xml_crc": "passed",
+    "sha256": "02cc4e1c42fb9d26d9035ba6c826855ee4711c7e041b68e9d9757e22ec00cdc1"
+  }
+]

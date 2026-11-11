@@ -1,0 +1,232 @@
+[
+  {
+    "name": "candidate-ruff",
+    "exit_code": 0,
+    "elapsed_s": 0.22096139999985098,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "."
+    ]
+  },
+  {
+    "name": "candidate-format",
+    "exit_code": 0,
+    "elapsed_s": 0.19262890000027255,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ]
+  },
+  {
+    "name": "candidate-pyright",
+    "exit_code": 0,
+    "elapsed_s": 1.8101153000002341,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pyright"
+    ]
+  },
+  {
+    "name": "candidate-mypy",
+    "exit_code": 0,
+    "elapsed_s": 8.459734399999888,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy"
+    ]
+  },
+  {
+    "name": "candidate-pytest",
+    "exit_code": 0,
+    "elapsed_s": 7.261407399999825,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "--cov=findex",
+      "--cov-report=term-missing",
+      "--cov-report=json:candidate-coverage.json",
+      "--junitxml=candidate-junit.xml"
+    ]
+  },
+  {
+    "name": "candidate-build",
+    "exit_code": 0,
+    "elapsed_s": 1.3809164000003875,
+    "command": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "build",
+      "--offline",
+      "--no-build-isolation"
+    ]
+  },
+  {
+    "name": "candidate-bin-index",
+    "exit_code": 0,
+    "elapsed_s": 0.808044400000199,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "findex",
+      "index",
+      "data/stdlib.jsonl",
+      "--positions",
+      "--out",
+      "data/index.bin"
+    ]
+  },
+  {
+    "name": "candidate-embed",
+    "exit_code": 0,
+    "elapsed_s": 62.10019349999993,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "findex",
+      "embed",
+      "data/index.npz",
+      "--out",
+      "data/embeddings"
+    ]
+  },
+  {
+    "name": "candidate-search-keyword",
+    "exit_code": 0,
+    "elapsed_s": 0.45688609999979235,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "findex",
+      "search",
+      "data/index.npz",
+      "python OR asyncio",
+      "--mode",
+      "keyword",
+      "--json",
+      "--k",
+      "5"
+    ]
+  },
+  {
+    "name": "candidate-search-semantic",
+    "exit_code": 0,
+    "elapsed_s": 0.6919323000001896,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "findex",
+      "search",
+      "data/index.npz",
+      "memoization",
+      "--mode",
+      "semantic",
+      "--json",
+      "--k",
+      "5"
+    ]
+  },
+  {
+    "name": "candidate-search-hybrid",
+    "exit_code": 0,
+    "elapsed_s": 0.7226602999999159,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "findex",
+      "search",
+      "data/index.npz",
+      "memoization",
+      "--mode",
+      "hybrid",
+      "--json",
+      "--k",
+      "5"
+    ]
+  },
+  {
+    "name": "candidate-evaluate",
+    "exit_code": 0,
+    "elapsed_s": 0.23165919999973994,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "scripts/evaluate.py"
+    ]
+  },
+  {
+    "name": "candidate-sanity",
+    "exit_code": 0,
+    "elapsed_s": 0.2258734999995795,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "scripts/sanity_corpus.py"
+    ]
+  },
+  {
+    "name": "candidate-lab02-output-paths",
+    "exit_code": 0,
+    "elapsed_s": 3.841781500000252,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "scripts/measure_lab02.py"
+    ]
+  },
+  {
+    "name": "candidate-crawl-debug",
+    "exit_code": 0,
+    "elapsed_s": 1.8895881999997073,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "findex",
+      "-v",
+      "crawl",
+      "http://127.0.0.1:49439/",
+      "--max-pages",
+      "200",
+      "--concurrency",
+      "5",
+      "--per-host",
+      "20",
+      "--min-delay",
+      "0.002",
+      "--out",
+      "data/crawl.jsonl"
+    ]
+  },
+  {
+    "name": "candidate-crawled-index",
+    "exit_code": 0,
+    "elapsed_s": 0.45231560000047466,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "findex",
+      "index",
+      "data/crawl.jsonl",
+      "--out",
+      "data/crawled.npz"
+    ]
+  },
+  {
+    "name": "candidate-benchmark-regression",
+    "exit_code": 0,
+    "elapsed_s": 3.60086339999998,
+    "command": [
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_benchmark.py",
+      "--benchmark-compare=docs/benchmark_baseline.json",
+      "--benchmark-compare-fail=mean:99%"
+    ]
+  }
+]

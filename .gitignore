@@ -13,6 +13,8 @@ htmlcov/
 dist/
 .env
 *.log
+# Selected, sanitized verification logs are submission evidence.
+!/docs/evidence/**/*.log
 *.prof
 *.bin
 *.npy

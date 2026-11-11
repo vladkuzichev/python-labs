@@ -2,7 +2,16 @@ services:
   - type: web
     name: findex
     runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     healthCheckPath: /health
     envVars:
+      # Render also passes environment variables as Docker build arguments.
+      - key: WITH_SEMANTIC
+        value: "1"
       - key: INDEX_PATH
         value: /app/data/index.npz
+      - key: MODEL_PATH
+        value: /app/models/all-MiniLM-L6-v2
+      - key: EMBEDDINGS_PATH
+        value: /app/data/embeddings

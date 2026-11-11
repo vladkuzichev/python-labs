@@ -1,0 +1,409 @@
+Зібрано 200 сторінок: data\crawl.jsonl
+
+STDERR:
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/robots.txt "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/robots.txt status=200 bytes=42 elapsed_s=0.01901 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/ "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/ status=200 bytes=7792 elapsed_s=0.01895 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/0 "HTTP/1.1 429 Too Many Requests"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/0 status=429 bytes=15 elapsed_s=0.02919 attempt=1
+WARNING findex.crawler.fetch: retry url=http://127.0.0.1:49439/page/0 status=429 delay_s=0.000
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/1 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/1 status=200 bytes=210 elapsed_s=0.04192 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/2 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/2 status=200 bytes=291 elapsed_s=0.04333 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/0 "HTTP/1.1 200 OK"
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/3 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/0 status=200 bytes=1842 elapsed_s=0.05800 attempt=2
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/3 status=200 bytes=994 elapsed_s=0.04441 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/4 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/4 status=200 bytes=187 elapsed_s=0.04128 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/5 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/5 status=200 bytes=397 elapsed_s=0.02299 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/6 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/6 status=200 bytes=452 elapsed_s=0.02323 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/7 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/7 status=200 bytes=265 elapsed_s=0.02440 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/8 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/8 status=200 bytes=312 elapsed_s=0.02377 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/9 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/9 status=200 bytes=211 elapsed_s=0.02309 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/10 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/10 status=200 bytes=488 elapsed_s=0.02420 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/11 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/11 status=200 bytes=261 elapsed_s=0.02428 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/12 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/12 status=200 bytes=180 elapsed_s=0.02481 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/13 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/13 status=200 bytes=186 elapsed_s=0.02402 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/14 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/14 status=200 bytes=230 elapsed_s=0.02459 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/15 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/15 status=200 bytes=198 elapsed_s=0.02457 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/16 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/16 status=200 bytes=381 elapsed_s=0.02438 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/17 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/17 status=200 bytes=272 elapsed_s=0.02360 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/18 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/18 status=200 bytes=213 elapsed_s=0.02390 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/19 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/19 status=200 bytes=276 elapsed_s=0.02393 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/20 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/20 status=200 bytes=181 elapsed_s=0.02390 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/21 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/21 status=200 bytes=461 elapsed_s=0.02386 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/22 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/22 status=200 bytes=1041 elapsed_s=0.02401 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/23 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/23 status=200 bytes=277 elapsed_s=0.02413 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/24 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/24 status=200 bytes=316 elapsed_s=0.02399 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/25 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/25 status=200 bytes=656 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/26 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/26 status=200 bytes=205 elapsed_s=0.02379 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/27 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/27 status=200 bytes=471 elapsed_s=0.02394 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/28 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/28 status=200 bytes=439 elapsed_s=0.02377 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/29 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/29 status=200 bytes=190 elapsed_s=0.02385 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/30 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/30 status=200 bytes=327 elapsed_s=0.02391 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/31 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/31 status=200 bytes=297 elapsed_s=0.02396 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/32 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/32 status=200 bytes=223 elapsed_s=0.02422 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/33 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/33 status=200 bytes=206 elapsed_s=0.02401 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/34 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/34 status=200 bytes=253 elapsed_s=0.02406 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/35 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/35 status=200 bytes=235 elapsed_s=0.02402 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/36 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/36 status=200 bytes=445 elapsed_s=0.02408 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/37 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/37 status=200 bytes=205 elapsed_s=0.02411 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/38 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/38 status=200 bytes=494 elapsed_s=0.02386 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/39 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/39 status=200 bytes=182 elapsed_s=0.02421 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/40 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/40 status=200 bytes=384 elapsed_s=0.02414 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/41 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/41 status=200 bytes=396 elapsed_s=0.02429 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/42 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/42 status=200 bytes=199 elapsed_s=0.02419 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/43 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/43 status=200 bytes=732 elapsed_s=0.02378 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/44 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/44 status=200 bytes=384 elapsed_s=0.02383 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/45 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/45 status=200 bytes=396 elapsed_s=0.02394 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/46 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/46 status=200 bytes=866 elapsed_s=0.02396 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/47 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/47 status=200 bytes=602 elapsed_s=0.02397 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/48 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/48 status=200 bytes=579 elapsed_s=0.02399 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/49 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/49 status=200 bytes=293 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/50 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/50 status=200 bytes=487 elapsed_s=0.02376 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/51 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/51 status=200 bytes=320 elapsed_s=0.02377 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/52 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/52 status=200 bytes=313 elapsed_s=0.02373 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/53 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/53 status=200 bytes=472 elapsed_s=0.02371 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/54 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/54 status=200 bytes=549 elapsed_s=0.02404 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/55 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/55 status=200 bytes=516 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/56 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/56 status=200 bytes=462 elapsed_s=0.02397 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/57 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/57 status=200 bytes=1059 elapsed_s=0.02405 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/58 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/58 status=200 bytes=671 elapsed_s=0.02417 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/59 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/59 status=200 bytes=714 elapsed_s=0.02397 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/60 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/60 status=200 bytes=260 elapsed_s=0.02405 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/61 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/61 status=200 bytes=1124 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/62 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/62 status=200 bytes=746 elapsed_s=0.02380 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/63 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/63 status=200 bytes=897 elapsed_s=0.02389 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/64 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/64 status=200 bytes=313 elapsed_s=0.02425 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/65 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/65 status=200 bytes=472 elapsed_s=0.02352 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/66 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/66 status=200 bytes=351 elapsed_s=0.02410 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/67 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/67 status=200 bytes=329 elapsed_s=0.02443 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/68 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/68 status=200 bytes=192 elapsed_s=0.02530 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/69 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/69 status=200 bytes=350 elapsed_s=0.02428 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/70 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/70 status=200 bytes=390 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/71 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/71 status=200 bytes=199 elapsed_s=0.02350 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/72 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/72 status=200 bytes=200 elapsed_s=0.02380 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/73 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/73 status=200 bytes=222 elapsed_s=0.02381 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/74 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/74 status=200 bytes=248 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/75 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/75 status=200 bytes=296 elapsed_s=0.02398 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/76 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/76 status=200 bytes=230 elapsed_s=0.02409 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/77 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/77 status=200 bytes=252 elapsed_s=0.02401 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/78 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/78 status=200 bytes=208 elapsed_s=0.02379 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/79 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/79 status=200 bytes=362 elapsed_s=0.02379 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/80 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/80 status=200 bytes=200 elapsed_s=0.02407 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/81 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/81 status=200 bytes=197 elapsed_s=0.02386 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/82 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/82 status=200 bytes=200 elapsed_s=0.02398 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/83 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/83 status=200 bytes=426 elapsed_s=0.02342 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/84 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/84 status=200 bytes=268 elapsed_s=0.02421 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/85 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/85 status=200 bytes=225 elapsed_s=0.02413 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/86 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/86 status=200 bytes=535 elapsed_s=0.02417 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/87 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/87 status=200 bytes=689 elapsed_s=0.02344 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/88 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/88 status=200 bytes=537 elapsed_s=0.02383 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/89 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/89 status=200 bytes=315 elapsed_s=0.02381 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/90 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/90 status=200 bytes=1611 elapsed_s=0.02396 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/91 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/91 status=200 bytes=1190 elapsed_s=0.02382 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/92 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/92 status=200 bytes=1266 elapsed_s=0.02400 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/93 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/93 status=200 bytes=243 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/94 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/94 status=200 bytes=372 elapsed_s=0.02413 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/95 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/95 status=200 bytes=378 elapsed_s=0.02391 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/96 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/96 status=200 bytes=396 elapsed_s=0.02409 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/97 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/97 status=200 bytes=950 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/98 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/98 status=200 bytes=1460 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/99 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/99 status=200 bytes=706 elapsed_s=0.02446 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/100 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/100 status=200 bytes=603 elapsed_s=0.02444 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/101 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/101 status=200 bytes=686 elapsed_s=0.02382 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/102 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/102 status=200 bytes=919 elapsed_s=0.02420 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/103 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/103 status=200 bytes=334 elapsed_s=0.02444 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/104 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/104 status=200 bytes=615 elapsed_s=0.02507 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/105 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/105 status=200 bytes=414 elapsed_s=0.02428 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/106 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/106 status=200 bytes=390 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/107 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/107 status=200 bytes=565 elapsed_s=0.02364 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/108 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/108 status=200 bytes=393 elapsed_s=0.02398 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/109 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/109 status=200 bytes=447 elapsed_s=0.02395 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/110 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/110 status=200 bytes=397 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/111 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/111 status=200 bytes=584 elapsed_s=0.02409 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/112 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/112 status=200 bytes=431 elapsed_s=0.02396 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/113 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/113 status=200 bytes=634 elapsed_s=0.02382 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/114 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/114 status=200 bytes=838 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/115 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/115 status=200 bytes=910 elapsed_s=0.02397 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/116 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/116 status=200 bytes=1141 elapsed_s=0.02412 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/117 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/117 status=200 bytes=647 elapsed_s=0.02395 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/118 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/118 status=200 bytes=1134 elapsed_s=0.02387 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/119 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/119 status=200 bytes=1145 elapsed_s=0.02387 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/120 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/120 status=200 bytes=1063 elapsed_s=0.02391 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/121 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/121 status=200 bytes=573 elapsed_s=0.02396 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/122 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/122 status=200 bytes=1068 elapsed_s=0.02410 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/123 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/123 status=200 bytes=570 elapsed_s=0.02401 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/124 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/124 status=200 bytes=546 elapsed_s=0.02400 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/125 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/125 status=200 bytes=1159 elapsed_s=0.02393 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/126 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/126 status=200 bytes=673 elapsed_s=0.02420 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/127 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/127 status=200 bytes=668 elapsed_s=0.02389 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/128 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/128 status=200 bytes=1416 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/129 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/129 status=200 bytes=823 elapsed_s=0.02466 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/130 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/130 status=200 bytes=1410 elapsed_s=0.02455 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/131 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/131 status=200 bytes=529 elapsed_s=0.02418 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/132 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/132 status=200 bytes=3324 elapsed_s=0.02514 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/133 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/133 status=200 bytes=2924 elapsed_s=0.02502 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/134 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/134 status=200 bytes=1460 elapsed_s=0.02494 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/135 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/135 status=200 bytes=1570 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/136 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/136 status=200 bytes=1247 elapsed_s=0.02419 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/137 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/137 status=200 bytes=821 elapsed_s=0.02406 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/138 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/138 status=200 bytes=702 elapsed_s=0.02441 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/139 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/139 status=200 bytes=1282 elapsed_s=0.02484 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/140 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/140 status=200 bytes=1088 elapsed_s=0.02493 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/141 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/141 status=200 bytes=693 elapsed_s=0.02468 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/142 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/142 status=200 bytes=1034 elapsed_s=0.02535 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/143 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/143 status=200 bytes=188 elapsed_s=0.02599 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/144 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/144 status=200 bytes=1270 elapsed_s=0.02596 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/145 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/145 status=200 bytes=1247 elapsed_s=0.02517 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/146 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/146 status=200 bytes=579 elapsed_s=0.02467 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/147 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/147 status=200 bytes=6439 elapsed_s=0.02480 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/148 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/148 status=200 bytes=1244 elapsed_s=0.02470 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/149 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/149 status=200 bytes=571 elapsed_s=0.02443 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/150 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/150 status=200 bytes=314 elapsed_s=0.02418 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/151 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/151 status=200 bytes=272 elapsed_s=0.02410 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/152 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/152 status=200 bytes=450 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/153 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/153 status=200 bytes=290 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/154 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/154 status=200 bytes=376 elapsed_s=0.02369 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/155 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/155 status=200 bytes=1134 elapsed_s=0.02403 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/156 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/156 status=200 bytes=243 elapsed_s=0.02390 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/157 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/157 status=200 bytes=533 elapsed_s=0.02404 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/158 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/158 status=200 bytes=178 elapsed_s=0.02406 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/159 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/159 status=200 bytes=158 elapsed_s=0.02409 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/160 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/160 status=200 bytes=230 elapsed_s=0.02392 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/161 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/161 status=200 bytes=165 elapsed_s=0.02376 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/162 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/162 status=200 bytes=181 elapsed_s=0.02375 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/163 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/163 status=200 bytes=176 elapsed_s=0.02377 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/164 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/164 status=200 bytes=189 elapsed_s=0.02376 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/165 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/165 status=200 bytes=181 elapsed_s=0.02421 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/166 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/166 status=200 bytes=359 elapsed_s=0.02422 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/167 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/167 status=200 bytes=266 elapsed_s=0.02418 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/168 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/168 status=200 bytes=219 elapsed_s=0.02431 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/169 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/169 status=200 bytes=217 elapsed_s=0.02376 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/170 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/170 status=200 bytes=250 elapsed_s=0.02375 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/171 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/171 status=200 bytes=185 elapsed_s=0.02381 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/172 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/172 status=200 bytes=645 elapsed_s=0.02395 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/173 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/173 status=200 bytes=383 elapsed_s=0.02381 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/174 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/174 status=200 bytes=270 elapsed_s=0.02376 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/175 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/175 status=200 bytes=298 elapsed_s=0.02373 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/176 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/176 status=200 bytes=202 elapsed_s=0.02375 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/177 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/177 status=200 bytes=270 elapsed_s=0.02370 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/178 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/178 status=200 bytes=256 elapsed_s=0.02373 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/179 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/179 status=200 bytes=269 elapsed_s=0.02386 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/180 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/180 status=200 bytes=248 elapsed_s=0.02367 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/181 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/181 status=200 bytes=283 elapsed_s=0.02375 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/182 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/182 status=200 bytes=491 elapsed_s=0.02367 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/183 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/183 status=200 bytes=231 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/184 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/184 status=200 bytes=183 elapsed_s=0.02370 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/185 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/185 status=200 bytes=261 elapsed_s=0.02388 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/186 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/186 status=200 bytes=209 elapsed_s=0.02364 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/187 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/187 status=200 bytes=185 elapsed_s=0.02361 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/188 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/188 status=200 bytes=840 elapsed_s=0.02369 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/189 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/189 status=200 bytes=199 elapsed_s=0.02372 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/190 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/190 status=200 bytes=202 elapsed_s=0.02371 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/191 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/191 status=200 bytes=493 elapsed_s=0.02387 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/192 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/192 status=200 bytes=212 elapsed_s=0.02391 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/193 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/193 status=200 bytes=204 elapsed_s=0.02402 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/194 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/194 status=200 bytes=224 elapsed_s=0.02473 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/195 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/195 status=200 bytes=195 elapsed_s=0.02466 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/196 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/196 status=200 bytes=250 elapsed_s=0.02407 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/197 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/197 status=200 bytes=273 elapsed_s=0.02498 attempt=1
+INFO httpx: HTTP Request: GET http://127.0.0.1:49439/page/198 "HTTP/1.1 200 OK"
+INFO findex.crawler.fetch: url=http://127.0.0.1:49439/page/198 status=200 bytes=1380 elapsed_s=0.02466 attempt=1
+Сторінок: 200; стор./с: 142.76; активних: 4; помилок: 0; черга: 0

@@ -1,0 +1,7 @@
+{"doc_id": 1228, "score": 0.01639344262295082, "title": "importlib.metadata._functools.method_cache", "snippet": "code. activestate. com / recipes / 577452 - a - memoize - decorator - for - instance - methods / for another implementation and additional justification."}
+{"doc_id": 1689, "score": 0.016129032258064516, "title": "pickle.clear_memo", "snippet": "pickle. clear _ memo clears the pickler &#x27; s &quot; memo &quot;. the memo is the data structure that remembers which objects the pickler has already seen, so that shared o…"}
+{"doc_id": 1712, "score": 0.015873015873015872, "title": "pickletools.dis", "snippet": ": + all embedded opcode arguments &quot; make sense &quot;. + explicit and implicit pop operations have enough items on the stack. + when an opcode implicitly refers to a…"}
+{"doc_id": 1846, "score": 0.015625, "title": "shelve.module", "snippet": ") also synchronizes the persistent dictionary on disk, if feasible )."}
+{"doc_id": 28, "score": 0.015384615384615385, "title": "_pydatetime.date", "snippet": "( readonly ) : year, month, day"}
+
+STDERR:

@@ -1,0 +1,7 @@
+
+STDERR:
+   Building findex @ file:///<lab_python>/_work/submission-clean-20261111
+      Built findex @ file:///<lab_python>/_work/submission-clean-20261111
+Prepared 1 package in 550ms
+Installed 1 package in 17ms
+ + findex==1.0.0 (from file:///<lab_python>/_work/submission-clean-20261111)

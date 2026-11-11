@@ -22,7 +22,8 @@ async def concurrent_20(url):
 
 
 def main():
-    root = Path("../Tests")
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
+    root = Path("data/measurements")
     servers = []
     handles = []
     env = {

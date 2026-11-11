@@ -36,6 +36,7 @@ def one(corpus, executor, workers):
 
 
 def main():
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
     parser = argparse.ArgumentParser()
     parser.add_argument("--free-threaded", action="store_true")
     args = parser.parse_args()
@@ -57,7 +58,7 @@ def main():
             }
             rows.append(row)
             print(json.dumps(row), flush=True)
-        Path("../Tests/lab05_free_threaded.json").write_text(json.dumps(rows, indent=2))
+        Path("data/measurements/lab05_free_threaded.json").write_text(json.dumps(rows, indent=2))
         return
     rows = []
     for executor in ["serial", "threads", "processes"]:
@@ -70,9 +71,9 @@ def main():
                 **{k: statistics.median(r[k] for r in runs) for k in runs[0]},
             }
             rows.append(row)
-            Path("../Tests/lab05_parallel.json").write_text(json.dumps(rows, indent=2))
+            Path("data/measurements/lab05_parallel.json").write_text(json.dumps(rows, indent=2))
             print(executor, workers, round(row["wall_s"], 4), flush=True)
-    Path("../Tests/machine.json").write_text(
+    Path("data/measurements/machine.json").write_text(
         json.dumps(
             {
                 "platform": platform.platform(),
@@ -104,7 +105,7 @@ def main():
     plt.legend()
     plt.grid()
     Path("docs").mkdir(exist_ok=True)
-    plt.savefig("docs/parallel_speedup.png", dpi=160, bbox_inches="tight")
+    plt.savefig("data/measurements/parallel_speedup.png", dpi=160, bbox_inches="tight")
 
 
 if __name__ == "__main__":

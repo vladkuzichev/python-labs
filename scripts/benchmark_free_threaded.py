@@ -11,6 +11,7 @@ import psutil
 
 
 def main():
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
     candidates = [
         Path("../RuntimeFreeThreaded/python/python.exe"),
         Path("../../_work/runtime-t/python/python.exe"),
@@ -63,7 +64,7 @@ def main():
         }
         rows.append(row)
         print(workers, row["wall_s"], row["parent_peak_rss"], flush=True)
-    Path("../Tests/lab05_free_threaded.json").write_text(json.dumps(rows, indent=2))
+    Path("data/measurements/lab05_free_threaded.json").write_text(json.dumps(rows, indent=2))
 
 
 if __name__ == "__main__":

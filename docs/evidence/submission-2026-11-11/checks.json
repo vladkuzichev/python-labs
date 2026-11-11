@@ -1,0 +1,294 @@
+[
+  {
+    "name": "clean-clone",
+    "args": [
+      "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\Git\\cmd\\git.exe",
+      "clone",
+      "--no-hardlinks",
+      "<lab_python>\\READY_TO_SUBMIT\\Project",
+      "<lab_python>\\_work\\submission-clean-20261111"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.2669
+  },
+  {
+    "name": "uv-sync-clean",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "sync",
+      "--frozen",
+      "--all-extras",
+      "--python",
+      "<lab_python>\\READY_TO_SUBMIT\\Runtime\\python\\python.exe",
+      "--offline"
+    ],
+    "exit_code": 1,
+    "elapsed_s": 0.1247
+  },
+  {
+    "name": "uv-sync-clean",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "sync",
+      "--frozen",
+      "--all-extras",
+      "--python",
+      "<lab_python>\\READY_TO_SUBMIT\\Runtime\\python\\python.exe",
+      "--offline"
+    ],
+    "exit_code": 1,
+    "elapsed_s": 0.0887
+  },
+  {
+    "name": "offline-dependencies",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "pip",
+      "install",
+      "--python",
+      "<lab_python>\\_work\\submission-clean-20261111\\.venv\\Scripts\\python.exe",
+      "--no-index",
+      "--find-links",
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\wheelhouse",
+      "-r",
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\requirements-dev.txt"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 2.2659
+  },
+  {
+    "name": "uv-sync-after-offline-bootstrap",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "sync",
+      "--frozen",
+      "--all-extras",
+      "--offline",
+      "--no-build-isolation"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.9003
+  },
+  {
+    "name": "environment",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "python",
+      "-c",
+      "import sys,platform; print(sys.version); print(platform.platform()); print(platform.machine())"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.1957
+  },
+  {
+    "name": "prepare-corpus",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "python",
+      "scripts/prepare_corpus.py"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.4622
+  },
+  {
+    "name": "index",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "findex",
+      "index",
+      "data/stdlib.jsonl",
+      "--positions",
+      "--out",
+      "data/index.npz"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 3.4258
+  },
+  {
+    "name": "search",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "findex",
+      "search",
+      "data/index.npz",
+      "\"event loop\" OR asyncio",
+      "--k",
+      "5",
+      "--json"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.5507
+  },
+  {
+    "name": "stats",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "findex",
+      "stats",
+      "data/index.npz"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.7309
+  },
+  {
+    "name": "model-sha256-offline",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "python",
+      "scripts/download_model.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.2288
+  },
+  {
+    "name": "ruff-check",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "ruff",
+      "check",
+      "."
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.5303
+  },
+  {
+    "name": "ruff-format",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.2148
+  },
+  {
+    "name": "pyright",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "pyright"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 2.0232
+  },
+  {
+    "name": "mypy",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "mypy"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 12.5068
+  },
+  {
+    "name": "pytest",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "pytest",
+      "--cov=findex",
+      "--cov-report=term-missing",
+      "--cov-report=json",
+      "--junitxml=checks-junit.xml"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 12.1284
+  },
+  {
+    "name": "benchmark-regression",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "run",
+      "--frozen",
+      "--offline",
+      "pytest",
+      "tests/test_benchmark.py",
+      "--benchmark-compare=docs/benchmark_baseline.json",
+      "--benchmark-compare-fail=mean:99%"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 3.6682
+  },
+  {
+    "name": "lock",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "lock",
+      "--check",
+      "--offline"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.0636
+  },
+  {
+    "name": "build",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "build",
+      "--offline",
+      "--no-build-isolation"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 1.3946
+  },
+  {
+    "name": "wheel-install",
+    "args": [
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "tool",
+      "install",
+      "<lab_python>\\_work\\submission-clean-20261111\\dist\\findex-1.0.0-py3-none-any.whl",
+      "--python",
+      "<lab_python>\\READY_TO_SUBMIT\\Runtime\\python\\python.exe",
+      "--offline",
+      "--no-index",
+      "--find-links",
+      "<lab_python>\\READY_TO_SUBMIT\\Offline\\wheelhouse"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.7949
+  },
+  {
+    "name": "wheel-help",
+    "args": [
+      "<lab_python>\\_work\\submission-wheel-bin\\findex.exe",
+      "--help"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.9843
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "backend": "ONNX uint8 AVX2, attention-mask mean pooling, L2 normalization",
+  "chunks": 3642,
+  "dimensions": 384,
+  "documents": 2873,
+  "fingerprint": "4d33206e90be20946a59cb14f00cb2a316e62d366ad38b072e884248b919efe7",
+  "chunk_tokens": 200,
+  "overlap_tokens": 40
+}
+
+STDERR:
+

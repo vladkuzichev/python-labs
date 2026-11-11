@@ -12,15 +12,17 @@ from findex.crawler.crawl import CrawlStats, crawl
 
 
 async def main():
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
     rows = []
     logging.basicConfig(
-        filename="../Tests/lab06_crawl.log",
+        filename="data/measurements/lab06_crawl.log",
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(name)s %(message)s",
         encoding="utf-8",
     )
     for concurrency in [1, 5, 20]:
-        async with httpx.AsyncClient() as client:
+        prepared_client = await asyncio.to_thread(httpx.AsyncClient)
+        async with prepared_client as client:
             (await client.post("http://127.0.0.1:8766/reset")).raise_for_status()
         state = CrawlStats()
         rss = []
@@ -51,7 +53,7 @@ async def main():
         }
         rows.append(row)
         print(json.dumps(row), flush=True)
-    Path("../Tests/lab06_benchmark.json").write_text(json.dumps(rows, indent=2))
+    Path("data/measurements/lab06_benchmark.json").write_text(json.dumps(rows, indent=2))
 
 
 if __name__ == "__main__":

@@ -1,115 +1,179 @@
 # findex
 
-Пошук у 2873 документах стандартної бібліотеки Python: CLI, вебінтерфейс, BM25 та семантичний MiniLM.
+Пошукова система над docstring стандартної бібліотеки Python: потоковий корпус,
+Boolean-запити, BM25/TF-IDF, NumPy, MiniLM, CLI та FastAPI/Jinja.
 
-**Локальна адреса:** http://127.0.0.1:8010/ під час поточного запуску. Публічна адреса не створювалася: користувач заборонив публікацію.
+**Код опубліковано:** [публічний GitHub-репозиторій](https://github.com/editlikeorigin-afk/findex-python-labs).
+**Вебсервіс ще не розгорнуто:** `http://127.0.0.1:8010/` — локальна адреса після запуску команди нижче.
+
+[![GitHub Actions](https://github.com/editlikeorigin-afk/findex-python-labs/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/editlikeorigin-afk/findex-python-labs/actions/workflows/ci.yml)
+
+Підтверджено [успішний CI №43021534036](https://github.com/editlikeorigin-afk/findex-python-labs/actions/runs/43021534036)
+для коміту `b02d1be` (11.11.2026). Поточний статус наступних комітів показує бейдж;
+зелений результат попереднього коміту не замінює перевірку нового. Докази: [VALIDATION](docs/VALIDATION.md).
 
 ![Пошук у findex](docs/demo.gif)
 
-- Корпус: 2873 документів, 190517 токенів, 1,513,665 байтів.
-- p95 локального NumPy-сервісу: 104.464 мс, oha, 1000 запитів / concurrency 50.
+Історичні локальні результати на CPython 3.13.18 / Windows 11 / Ryzen 7 7800X3D:
+
+- 2873 документи, 190517 токенів, 8875 термінів.
+- p95 NumPy-сервісу: 104.464 мс, `oha`, 1000 запитів, concurrency 50.
 - Найбільше виміряне прискорення скорера: 9.46×; на рідкому терміні NumPy повільніший.
 
-![Локальні перевірки](docs/local-checks.svg)
+Це числа попередніх дослідів; інший Python, платформа або машина можуть дати інший корпус і час.
+[Матеріали для здачі та незакриті вимоги](docs/SUBMISSION.md) · [Захист і Reflection](docs/DEFENSE.md).
 
-## Встановлення та запуск
+## Встановлення з GitHub
 
-Python 3.13 рекомендовано; метадані підтримують Python 3.12–3.13, перевірено 3.13.18. Команди виконуються з Project/.
+Потрібні Git, Python 3.12–3.13 (рекомендовано 3.13) і [uv](https://docs.astral.sh/uv/getting-started/installation/).
+У Windows uv можна встановити командою `winget install --id astral-sh.uv --exact`;
+Git — офіційним [Git for Windows](https://git-scm.com/downloads/win). Після встановлення слід відкрити новий термінал.
+Python можна встановити через uv. Завантаження інструментів, клонування, Python і залежностей потребують інтернету.
 
 ```powershell
-uv sync --frozen --all-extras
-uv run python scripts/prepare_corpus.py
-uv run findex index data/stdlib.jsonl --positions --out data/index.npz
-uv run findex search data/index.npz '"event loop" OR asyncio' --k 5
-uv run findex serve --port 8010
+git clone https://github.com/editlikeorigin-afk/findex-python-labs.git
+cd findex-python-labs
+uv python install 3.13
+uv sync --frozen
 ```
 
-У комплекті вже є корпус, індекс, модель та ембеддинги; повторна підготовка не потрібна.
-На цій машині готове середовище запускається командою `.\.venv\Scripts\python.exe -m findex --help`.
-Середовище .venv не включено в ZIP, бо містить абсолютне посилання на локальний Python.
-Архів має portable Runtime та Offline/wheelhouse для автономного встановлення в Windows x64 Python 3.13; див. INSTALL_OFFLINE.md.
+Усі подальші команди виконуються з **кореня клонованого репозиторію**.
+`uv.lock` фіксує залежності. `uv sync --frozen --all-extras` додатково встановлює
+необов'язкові інструменти для звітів. Каталоги `data/`, `models/` та `.venv/` не відстежуються Git.
+У свіжому клоні немає корпусу, індексу, завантаженої моделі чи ембеддингів.
+
+## Від корпусу до звичайного пошуку
+
+Наведені команди після встановлення залежностей працюють без інтернету:
 
 ```powershell
+uv run --frozen python scripts/prepare_corpus.py
+uv run --frozen findex index data/stdlib.jsonl --positions --out data/index.npz
+uv run --frozen findex stats data/index.npz
+uv run --frozen findex search data/index.npz '"event loop" OR asyncio' --k 5 --json
+uv run --frozen findex search data/index.npz 'python NOT java' --scorer tfidf --backend python
+```
+
+`prepare_corpus.py` читає docstring з локальної стандартної бібліотеки CPython, не завантажує тексти з мережі,
+створює `data/stdlib.jsonl` і друкує кількість документів, байти та SHA256.
+Корпус поширюється за ліцензією PSF; [текст ліцензії](docs/CPython_LICENSE.txt).
+Склад бібліотеки, порядок/вміст docstring і SHA256 залежать від версії, збірки Python та платформи.
+Маніфест [попереднього корпусу](docs/measurements/corpus_manifest.json) описує саме старий дослід,
+а не гарантує ідентичність кожного нового запуску.
+
+Токенізатор: NFC → casefold → `re.finditer`; цифри зберігаються, дефіс і underscore розділяють слова,
+внутрішні апострофи зберігаються й уніфікуються. Некоректний UTF-8 читається з replacement;
+помилкові JSONL-записи пропускаються з діагностикою.
+
+## Локальний вебсервіс
+
+```powershell
+uv run --frozen findex serve --host 127.0.0.1 --port 8010 --workers 1
+```
+
+В іншому вікні або браузері:
+
+- [UI](http://127.0.0.1:8010/) і [OpenAPI](http://127.0.0.1:8010/docs).
+- `GET /search?q=event%20loop&k=5&page=1&scorer=bm25&mode=keyword`.
+- `GET /docs/0` — JSON документа, `GET /doc/0` — HTML документа.
+- `GET /stats`, `GET /health`; помилки валідації — 422, синтаксису запиту — 400,
+  невідомий документ — 404, відсутній індекс/семантичні ресурси — 503.
+
+Шляхи налаштовуються через `INDEX_PATH`, `MODEL_PATH`, `EMBEDDINGS_PATH`; `BACKEND=numpy|python`,
+`ROUTE_STYLE=sync|async`. Типово завантажується `data/index.npz` один раз під час lifespan.
+Основний маршрут — `def`, контрольний `async def` використано у вимірюванні.
+Наявність сторінки репозиторію на github.com не означає розгортання FastAPI.
+[Підготовка Docker/Render і перевірки після розгортання](docs/DEPLOYMENT.md).
+
+## Семантичний і гібридний пошук
+
+Після побудови того самого індексу потрібно окремо завантажити модель і побудувати ембеддинги:
+
+```powershell
+uv run --frozen python scripts/download_model.py
+uv run --frozen python scripts/download_model.py --check
+uv run --frozen findex embed data/index.npz --model all-MiniLM-L6-v2 --model-path models/all-MiniLM-L6-v2 --out data/embeddings
+uv run --frozen findex search data/index.npz 'memoization' --mode semantic --model-path models/all-MiniLM-L6-v2 --embeddings-path data/embeddings --k 5
+uv run --frozen findex search data/index.npz 'decompression' --mode hybrid --k 5
+```
+
+Перша команда потребує доступу до Hugging Face. Зафіксовані revision і SHA256 кожного файла —
+[model_manifest.json](evaluation/model_manifest.json). `--check` перевіряє локальні файли без мережі.
+Побудова ембеддингів і подальший пошук локальні, потребують CPU/RAM; час залежить від корпусу.
+Після зміни корпусу або індексу ембеддинги потрібно перебудувати. Для HTTP використовуються
+`/search?q=memoization&mode=semantic` та `mode=hybrid`; перемикач є і в UI.
+Keyword-пошук не потребує файлів MiniLM або ембеддингів.
+
+## CLI, краулер і пакування
+
+```powershell
+uv run --frozen findex --help
+uv run --frozen findex -v index data/stdlib.jsonl --positions --workers 4 --executor processes --out data/processes.npz
+uv run --frozen findex -vv search data/index.npz 'python OR asyncio' --engine set --json
 uv build
 uv tool install dist/findex-1.0.0-py3-none-any.whl
 findex --help
 ```
 
-## Команди
+`-v/-vv` передається перед підкомандою. `--json` друкує лише JSON Lines у stdout;
+діагностика й прогрес ідуть у stderr. `serial` залишено типовим executor за реальними вимірюваннями.
+Для локального контрольованого обходу запустіть у першому терміналі:
 
 ```powershell
-findex stats data/index.npz
-findex -v index data/stdlib.jsonl --positions --workers 4 --executor processes --out data/index.npz
-findex -vv search data/index.npz 'python OR asyncio' --scorer bm25 --backend numpy --json
-findex search data/index.npz 'event loop' --engine set --backend python
-findex crawl http://127.0.0.1:8766/ --max-pages 200 --concurrency 5 --out data/crawl.jsonl
-findex index data/crawl.jsonl --positions --out data/crawled.npz
-findex embed data/index.npz --model all-MiniLM-L6-v2 --out data/embeddings
-findex search data/index.npz 'checksum' --mode semantic
-findex search data/index.npz 'decompression' --mode hybrid
-findex serve --port 8010 --workers 1
+uv run --frozen uvicorn scripts.mirror:app --host 127.0.0.1 --port 8766
 ```
 
-Локальне дзеркало для crawl запускається `uv run uvicorn scripts.mirror:app --port 8766`.
-Типовий executor=serial: на цьому корпусі процеси не виграли. `-v/-vv` передається перед підкомандою.
-`--json` пише лише JSON Lines у stdout, діагностика й прогрес ідуть у stderr.
+У другому терміналі з кореня того самого репозиторію:
 
-## HTTP API
+```powershell
+uv run --frozen findex crawl http://127.0.0.1:8766/ --max-pages 200 --concurrency 5 --per-host 20 --min-delay 0.002 --out data/crawl.jsonl
+uv run --frozen findex index data/crawl.jsonl --positions --out data/crawled.npz
+```
 
-- `/search?q=event%20loop&k=5&page=1&scorer=bm25&mode=keyword`
-- `/search?q=memoization&mode=semantic` та `mode=hybrid`.
-- `/docs/1010` — JSON документа, `/doc/1010` — його сторінка.
-- `/stats`, `/health`, `/docs` — статистика, health check та OpenAPI.
+Це власне локальне дзеркало, дозволене для досліду, з robots.txt, контрольованою затримкою і 429.
+Для чужого сайту потрібні його дозвіл, robots.txt, ліміти й реальна контактна адреса у User-Agent.
 
-Параметри перевіряє Pydantic; неправильні межі дають 422, помилка синтаксису запиту — 400,
-невідомий документ — 404, незавантажений індекс — 503. Непередбачений виняток повертає чистий 500 із request_id.
-Сервіс читає INDEX_PATH, MODEL_PATH, EMBEDDINGS_PATH, ROUTE_STYLE та BACKEND із середовища.
-Основний маршрут — def, FastAPI переносить його в пул потоків; async-варіант лишено лише для контрольного вимірювання.
+## Перевірки
 
-## Архітектура
+Для повного набору тестів спочатку завантажте модель командою вище: два тести використовують справжній MiniLM.
+
+```powershell
+uv run --frozen pytest --cov=findex
+uv run --frozen ruff check .
+uv run --frozen ruff format --check .
+uv run --frozen pyright
+uv run --frozen mypy
+uv run --frozen pytest tests/test_benchmark.py --benchmark-compare=docs/benchmark_baseline.json --benchmark-compare-fail=mean:99%
+uv lock --check
+uv build
+```
+
+Локально: 103 passed, покриття 86.56%; повторна перевірка у чистому локальному клоні також дала
+103 passed і 86.56%. Після виправлення startup-клієнта новий main дав 104 passed і 86.57%. Детальні умови, невдалий початковий offline sync та успішний offline bootstrap —
+[VALIDATION](docs/VALIDATION.md). Поріг pytest-benchmark допускає 99% зростання mean проти зафіксованої
+машини: це грубий захист від регресій, а не точне порівняння різного обладнання.
+
+## Автономний комплект
+
+GitHub-клон і `READY_TO_SUBMIT.zip` — різні способи постачання. ZIP містить окремі Runtime,
+Offline/wheelhouse, корпус, індекси, модель, ембеддинги, DOCX та повні журнали.
+Ці файли не додаються до Git. Інструкція саме для ZIP: [docs/OFFLINE.md](docs/OFFLINE.md).
+
+## Структура та архітектура
+
+`src/findex/` — corpus, tokenize, stats, index, boolean, store, query, scoring, search,
+parallel, vector, semantic, retrieval і cli; `crawler/` та `web/` — мережеві компоненти.
+`tests/` — unit/Hypothesis/TestClient/benchmark; `scripts/` — корпус і вимірювання;
+`evaluation/` — маніфест моделі та оцінювальні судження; `docs/` — докази, профілі, медіа й здача.
 
 ![Архітектура](docs/architecture.png)
 
-## Структура
-
-`src/findex/`: corpus, tokenize, stats, index, boolean, store, query, scoring, search,
-parallel, vector, semantic, retrieval, cli; `crawler/` та `web/` — мережеві компоненти.
-`tests/` — unit, Hypothesis, TestClient та benchmark; `scripts/` — відтворення корпусу і вимірювань.
-`evaluation/` — зафіксовані relevance judgments; `docs/` — таблиці, схеми, профілі, GIF і відео.
-`data/` і `models/` ігноруються Git, проте включені до комплекту здачі.
-
-## Тестування
-
-```powershell
-uv run pytest --cov=findex
-uv run ruff check .
-uv run ruff format --check .
-uv run pyright
-uv run mypy
-uv run pytest tests/test_benchmark.py --benchmark-json=bench.json
-```
-
-На машині перевірки: 103 pytest-тестів, 0 failures, 0 errors; покриття 86.56%.
-Не всі аварійні гілки файлової системи, запуск окремих модульних CLI та інтерактивне відображення
-прогресу охоплено unit coverage; CLI додатково перевірено справжніми командами й установленням wheel.
-CI підготовлено у `.github/workflows/ci.yml`; зовнішній GitHub Actions не запускався і зелений статус не стверджується.
-
-## Корпус і токенізатор
-
-Справжні docstring CPython 3.13.18, ліцензія PSF. Відтворення — scripts/prepare_corpus.py;
-походження та SHA256 — docs/measurements/corpus_manifest.json. NFC → casefold → re.finditer.
-Цифри зберігаються; дефіс та underscore розділяють; внутрішні апострофи лишаються й уніфікуються.
-Некоректний UTF-8 читається з replacement, хибні JSONL-записи пропускаються з діагностикою.
-
 ## Вимірювання лабораторних 1–8
 
-Машина: AMD Ryzen 7 7800X3D 8-Core Processor, 16 логічних CPU; Windows-11-10.0.26300-SP0.
-Показники RSS — спостережений пік батька, не сумарна пам’ять усіх процесів.
-Повні таблиці нижче, методика й первинні JSON — [docs/MEASUREMENTS.md](docs/MEASUREMENTS.md).
+Початкові таблиці наведено нижче без зміни чисел. RSS стосується батьківського процесу,
+а не суми пам'яті всіх процесів. Опис та первинні JSON: [MEASUREMENTS](docs/MEASUREMENTS.md).
 
-# Вимірювання лабораторних робіт 1–8
-
-Усі числа нижче походять із файлів Tests/. Результати залежать від машини й методики; це не прогноз продуктивності.
+Історичні локальні вимірювання 10–11.11.2026: CPython 3.13.18, Windows 11, Ryzen 7 7800X3D. Числа не змінювалися під час аудиту здачі. Первинні JSON опубліковано в [measurements/](docs/measurements/), вибрані журнали — в [evidence/](docs/evidence/); повні початкові журнали зберігаються як `READY_TO_SUBMIT/Tests/` окремого комплекту. Нові перевірки відокремлено в [VALIDATION.md](docs/VALIDATION.md).
 
 ## Лабораторна 1. Ітератори, генератори та корпус документів
 
@@ -184,7 +248,8 @@ CI підготовлено у `.github/workflows/ci.yml`; зовнішній Gi
 | mypy strict | 0 errors |
 | ruff | check / format пройдено |
 | Wheel | findex-0.4.0-py3-none-any.whl; встановлено uv tool у чисте середовище |
-| Зовнішній CI / GitHub Release | Не запускалися / не публікувалися |
+| GitHub Actions | [Запуск 43021534036: success](https://github.com/editlikeorigin-afk/findex-python-labs/actions/runs/43021534036), SHA b02d1be; статус перевірено 11.11.2026 |
+| GitHub Release v0.4.0 | Пакет підготовлено; опублікований Release поки відсутній |
 
 
 ## Лабораторна 5. Конкурентність і GIL: потоки, процеси та паралельна індексація
@@ -214,6 +279,8 @@ CI підготовлено у `.github/workflows/ci.yml`; зовнішній Gi
 | threads 3.13t | 8 | 0.2188 | 0.4531 | 57.38 | 0.0574 | 1.06× |
 | threads 3.13t | 16 | 0.3166 | 0.9688 | 63.17 | 0.0714 | 0.74× |
 
+
+![Прискорення та ідеальна лінія](docs/parallel_speedup.png)
 
 ## Лабораторна 6. Асинхронний краулер: asyncio
 
@@ -281,22 +348,29 @@ oha 1.16.0 надсилав по 1000 справжніх HTTP-запитів з 
 
 Невелика вибірка та неповні судження не дають підстав оголошувати універсального переможця. Для запиту з одним релевантним документом максимальний P@5 становить 0.2. Судження підготував AI-асистент за текстом корпусу, не студент і не незалежна група анотаторів.
 
-## Обмеження та здача
 
-Корпус невеликий; ці прискорення не екстраполюються на гігабайти. MiniLM — англомовна
+
+## Обмеження, походження та здача
+
+Корпус невеликий; прискорення не екстраполюються на гігабайти. MiniLM — англомовна
 квантизована модель; якість українського пошуку не вимірювалася. P@5 має неповні AI-судження
-та малу вибірку. Keyword-режим зберігає Boolean AND, тому природномовні перефразування можуть
-не мати жодного буквального збігу. Семантичний режим не інтерпретує Boolean-оператори.
+й малу вибірку: це не ручна незалежна розмітка, її перевірка людиною залишається відкритою.
+За іншого складу корпусу числові doc_id у qrels потребують повторного зіставлення із заголовками.
+Keyword-режим використовує Boolean AND; semantic-режим не інтерпретує Boolean-оператори.
 
-Pickle завантажується тільки з довірених локальних файлів. NPZ/NPY відкриваються з allow_pickle=False.
-Краулер тестувався на власному локальному дзеркалі; його User-Agent містить локальну контактну
-адресу. Для іншого сайту потрібен реальний контакт оператора та дозвіл цього сайту.
-У вимірюванні concurrency 20 не перемогла 5 — це відображено без виправлення цифр.
+Pickle дозволено читати лише з власних довірених файлів. NPZ/NPY відкриваються з `allow_pickle=False`.
+У старому журналі краулера є startup-попередження asyncio про повільне створення клієнта;
+під час аудиту ініціалізацію перенесено в to_thread; новий обхід 200 сторінок із debug=True пройшов без цього warning. Старий лог не переписано. Dockerfile виправлено для клону
+без `data/` і `models/`, але Docker у середовищі відсутній: складання/запуск не підтверджено.
+Публічний вебсервіс і load-test на deployed URL відсутні. GitHub Release v0.4.0 ще не опубліковано;
+[пакет та опис підготовлено](docs/RELEASES.md). Ці незакриті пункти не позначаються виконаними.
 
-Dockerfile та render.yaml підготовлено; Docker відсутній, складання контейнера не перевірене.
-GitHub Release, віддалений CI та публічне розгортання не виконані за прямою вказівкою користувача.
-Локальні теги lab-01…lab-08, v0.4.0, v0.7.0, v1.0.0 і Git bundle входять у комплект.
-Відео: [docs/demo.webm](docs/demo.webm), GIF: [docs/demo.gif](docs/demo.gif).
+Код і всі теги опубліковані. Теги `lab-01`–`lab-08`, `v0.4.0`, `v0.7.0`, `v1.0.0` збережено
+без переміщення. Виявлені недоліки історичних README описано в [SUBMISSION](docs/SUBMISSION.md).
+DOCX здаються окремими файлами з `READY_TO_SUBMIT/Reports/`, у публічний репозиторій не включаються.
+Демонстрація: [відео 2:55.6](docs/demo.webm), [GIF](docs/demo.gif).
 
-Роботу підготовлено з допомогою AI. Локальна історія створена під час цієї сесії, а не за семестр.
-Для захисту слід розібрати код та підготувати власні відповіді на Reflection; див. Documentation/DEFENSE.md.
+Роботу підготовлено з допомогою AI. Вихідну послідовну Git-історію створено під час підготовки
+10–11.11.2026, вона не є історією роботи протягом семестру. Авторство AI-суджень релевантності
+відкрите. Перед захистом потрібне самостійне розуміння коду та власні пояснення;
+[DEFENSE](docs/DEFENSE.md) містить команди й навчальні відповіді за оригінальними Reflection.

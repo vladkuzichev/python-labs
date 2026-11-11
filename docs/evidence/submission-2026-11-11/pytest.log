@@ -1,0 +1,67 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.18, pytest-8.4.1, pluggy-1.6.0
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: <lab_python>\_work\submission-clean-20261111
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.9.0, hypothesis-6.135.26, benchmark-5.1.0, cov-6.2.1
+collected 103 items
+
+tests\test_benchmark.py ..                                               [  1%]
+tests\test_crawler.py ...........                                        [ 12%]
+tests\test_index.py ................                                     [ 28%]
+tests\test_parallel.py .....                                             [ 33%]
+tests\test_properties_cli.py .......                                     [ 39%]
+tests\test_query_ranking.py ........................                     [ 63%]
+tests\test_tokenize.py ...........                                       [ 73%]
+tests\test_vector_semantic.py ................                           [ 89%]
+tests\test_web.py ...........                                            [100%]
+
+- generated xml file: <lab_python>\_work\submission-clean-20261111\checks-junit.xml -
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.18-final-0 _______________
+
+Name                             Stmts   Miss  Cover   Missing
+--------------------------------------------------------------
+src\findex\__init__.py               1      0   100%
+src\findex\__main__.py               3      3     0%   1-4
+src\findex\boolean.py               50      0   100%
+src\findex\cli.py                  142     49    65%   109-112, 135, 162-172, 176-178, 207-246, 256-258, 269-282, 286
+src\findex\corpus.py                40      4    90%   37, 42, 51, 58
+src\findex\crawler\__init__.py       0      0   100%
+src\findex\crawler\crawl.py        160     12    92%   28, 31, 34, 89, 105, 120-121, 137, 161-162, 164, 168
+src\findex\crawler\fetch.py         49      2    96%   81-82
+src\findex\crawler\robots.py        28      1    96%   34
+src\findex\index.py                100     16    84%   44, 115-129, 136
+src\findex\instrument.py            13      0   100%
+src\findex\parallel.py             108     13    88%   83-86, 88-89, 128, 137-139, 146-148
+src\findex\query.py                129      6    95%   24, 27, 117, 153, 164, 170
+src\findex\retrieval.py             20      5    75%   27-29, 40-43
+src\findex\scoring.py               22      1    95%   27
+src\findex\search.py                87     18    79%   41, 89, 122-137, 141
+src\findex\semantic.py             108      4    96%   28, 98, 131, 176
+src\findex\stats.py                 45     45     0%   3-59
+src\findex\store.py                 51      2    96%   33, 50
+src\findex\tokenize.py               9      0   100%
+src\findex\vector.py               128      5    96%   43, 82, 108, 112, 118
+src\findex\web\__init__.py           0      0   100%
+src\findex\web\app.py              103      6    94%   35, 67-69, 95, 140
+src\findex\web\models.py            23      0   100%
+src\findex\web\settings.py          10      0   100%
+--------------------------------------------------------------
+TOTAL                             1429    192    87%
+Coverage JSON written to file coverage.json
+
+-------------------------------------------------------------------------------------- benchmark: 2 tests -------------------------------------------------------------------------------------
+Name (time in us)             Min                 Max               Mean            StdDev             Median               IQR            Outliers  OPS (Kops/s)            Rounds  Iterations
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_benchmark_build      13.7000 (1.0)       52.7000 (1.0)      14.6620 (1.0)      1.7009 (1.0)      14.3000 (1.0)      0.3000 (1.0)     1052;2654       68.2033 (1.0)       23981           1
+test_benchmark_search     24.1000 (1.76)     199.7000 (3.79)     26.4565 (1.80)     5.0901 (2.99)     25.3000 (1.77)     1.8000 (6.00)      116;233       37.7979 (0.55)       2561           1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Legend:
+  Outliers: 1 Standard Deviation from Mean; 1.5 IQR (InterQuartile Range) from 1st Quartile and 3rd Quartile.
+  OPS: Operations Per Second, computed as 1 / Mean
+============================= 103 passed in 9.91s =============================
+
+STDERR:

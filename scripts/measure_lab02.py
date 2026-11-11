@@ -41,8 +41,9 @@ def representation(corpus, kind):
 
 
 def main():
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
     corpus = Path("data/stdlib.jsonl")
-    out = Path("../Tests")
+    out = Path("data/measurements")
     measurements = {"storage": [], "formats": [], "boolean": []}
     for kind in ["plain", "slots", "array"]:
         tracemalloc.start()

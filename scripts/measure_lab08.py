@@ -22,6 +22,7 @@ def median_ms(function):
 
 
 def main():
+    Path("data/measurements").mkdir(parents=True, exist_ok=True)
     index = load(Path("data/index.npz"))
     scalar_index = load(Path("data/index.bin"))
     vector_index(index)
@@ -59,7 +60,7 @@ def main():
                     "speedup": python_ms / numpy_ms,
                 }
             )
-    Path("../Tests/lab08_speed.json").write_text(json.dumps(rows, indent=2))
+    Path("data/measurements/lab08_speed.json").write_text(json.dumps(rows, indent=2))
     labels = json.loads(Path("evaluation/qrels.json").read_text(encoding="utf-8"))["queries"]
     paraphrases = [
         ("memoization", [1010], "Збереження результатів повторного обчислення"),
@@ -97,7 +98,7 @@ def main():
                 "elapsed_s": time.perf_counter() - started,
             }
         evaluation.append(row)
-        Path("../Tests/lab08_precision.json").write_text(
+        Path("data/measurements/lab08_precision.json").write_text(
             json.dumps(evaluation, ensure_ascii=False, indent=2), encoding="utf-8"
         )
         print(

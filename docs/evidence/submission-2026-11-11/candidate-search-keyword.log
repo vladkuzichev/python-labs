@@ -1,0 +1,7 @@
+{"doc_id": 419, "score": 7.711826053899041, "title": "asyncio.transports.get_returncode", "snippet": "<mark>asyncio</mark>.transports.get_returncode\n\nGet subprocess returncode.\n\nSee also\nhttp://docs.pyt…"}
+{"doc_id": 420, "score": 7.635508453738117, "title": "asyncio.transports.send_signal", "snippet": "<mark>asyncio</mark>.transports.send_signal\n\nSend signal to subprocess.\n\nSee also:\ndocs.<mark>python</mark>.org/3…"}
+{"doc_id": 422, "score": 6.591774514273631, "title": "asyncio.transports.kill", "snippet": "<mark>asyncio</mark>.transports.kill\n\nKill the subprocess.\n\nOn Posix OSs the function sends SIGKILL …"}
+{"doc_id": 421, "score": 6.12111694543877, "title": "asyncio.transports.terminate", "snippet": "<mark>asyncio</mark>.transports.terminate\n\nStop the subprocess.\n\nAlias for close() method.\n\nOn Posix…"}
+{"doc_id": 1737, "score": 5.303646495833238, "title": "platform.python_implementation", "snippet": "platform.python_implementation\n\nReturns a string identifying the <mark>Python</mark> implementation.\n\nCurrently, the following implementations are identified:\n  &#x27;CP…"}
+
+STDERR:

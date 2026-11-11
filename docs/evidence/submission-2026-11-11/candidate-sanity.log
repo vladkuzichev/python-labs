@@ -1,0 +1,55 @@
+[
+  {
+    "check": "rare_vs_common",
+    "scorer": "bm25",
+    "rare": "zscore",
+    "common": "the",
+    "rare_doc": 1984,
+    "rare_title": "statistics.zscore",
+    "rare_score": 10.504558072092166,
+    "common_doc": 2245,
+    "common_title": "tkinter.__init__.read",
+    "common_score": 0.3155470972087518
+  },
+  {
+    "check": "rare_vs_common",
+    "scorer": "tfidf",
+    "rare": "zscore",
+    "common": "the",
+    "rare_doc": 1984,
+    "rare_title": "statistics.zscore",
+    "rare_score": 9.791759272049745,
+    "common_doc": 1813,
+    "common_title": "re.__init__.module",
+    "common_score": 4.1424480838203435
+  },
+  {
+    "check": "saturation",
+    "doc_id": 0,
+    "title": "__future__.module",
+    "term": "the",
+    "actual_tf": 21,
+    "fixed_doc_length": 248,
+    "scores": {
+      "1": 0.06324231810556509,
+      "2": 0.10726883786337497,
+      "19": 0.2844394943298071,
+      "20": 0.28723010502554186
+    },
+    "gain_2": 0.044026519757809884,
+    "gain_20": 0.0027906106957347743,
+    "method": "Controlled scorer calculation: real document/IDF/length; only observed TF is capped at n occurrences."
+  },
+  {
+    "check": "length",
+    "term": "return",
+    "short_doc": 12,
+    "short_length": 17,
+    "short_score": 1.833572873066599,
+    "long_doc": 2265,
+    "long_length": 862,
+    "long_score": 0.19063715426662514
+  }
+]
+
+STDERR:

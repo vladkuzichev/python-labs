@@ -1,0 +1,7 @@
+{"doc_id": 286, "score": 18.635010482053964, "title": "asyncio.events.get_event_loop", "snippet": "<mark>asyncio</mark>.events.get_event_loop\n\nReturn an <mark>asyncio</mark> <mark>event</mark> <mark>loop</mark>.\n\nWhen called from a corout…"}
+{"doc_id": 299, "score": 17.84665358438022, "title": "asyncio.events.new_event_loop", "snippet": "<mark>asyncio</mark>.events.new_event_loop\n\nCreate and return a new <mark>event</mark> <mark>loop</mark> object according to t…"}
+{"doc_id": 436, "score": 17.513735146733453, "title": "asyncio.unix_events.set_event_loop", "snippet": "<mark>asyncio</mark>.unix_events.set_event_loop\n\nSet the <mark>event</mark> <mark>loop</mark>.\n\nAs a side effect, if a child w…"}
+{"doc_id": 300, "score": 16.964999640276805, "title": "asyncio.events.get_event_loop", "snippet": "<mark>asyncio</mark>.events.get_event_loop\n\nGet the <mark>event</mark> <mark>loop</mark> for the current context.\n\nReturns an …"}
+{"doc_id": 284, "score": 16.929593481612223, "title": "asyncio.events.BaseDefaultEventLoopPolicy", "snippet": "…nts.BaseDefaultEventLoopPolicy\n\nDefault policy implementation for accessing the <mark>event</mark> <mark>loop</mark>.\n\nIn this policy, each thread has its own <mark>event</mark> <mark>loop</mark>.  However, we\nonly au…"}
+
+STDERR:

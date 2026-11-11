@@ -1,0 +1,83 @@
+{
+  "storage": [
+    {
+      "kind": "plain",
+      "peak_bytes": 13479534,
+      "file_bytes": 2658739,
+      "build_s": 0.3781618000002709,
+      "load_s": 0.045845399999961955
+    },
+    {
+      "kind": "slots",
+      "peak_bytes": 8850126,
+      "file_bytes": 1965289,
+      "build_s": 0.385368400000516,
+      "load_s": 0.13486980000016047
+    },
+    {
+      "kind": "array",
+      "peak_bytes": 3729582,
+      "file_bytes": 1321788,
+      "build_s": 0.2919123000001491,
+      "load_s": 0.005571599999711907
+    }
+  ],
+  "formats": [
+    {
+      "format": ".json",
+      "file_bytes": 7274123,
+      "save_s": 0.2317678999997952,
+      "load_s": 0.1938822000001892
+    },
+    {
+      "format": ".bin",
+      "file_bytes": 3966776,
+      "save_s": 0.18607150000025285,
+      "load_s": 0.14449299999978393
+    }
+  ],
+  "boolean": [
+    {
+      "terms": [
+        "the",
+        "a"
+      ],
+      "label": "common",
+      "engine": "merge",
+      "median_ms": 0.24989999999999998
+    },
+    {
+      "terms": [
+        "the",
+        "a"
+      ],
+      "label": "common",
+      "engine": "set",
+      "median_ms": 0.0775
+    },
+    {
+      "terms": [
+        "zscore",
+        "zz"
+      ],
+      "label": "rare",
+      "engine": "merge",
+      "median_ms": 0.0002
+    },
+    {
+      "terms": [
+        "zscore",
+        "zz"
+      ],
+      "label": "rare",
+      "engine": "set",
+      "median_ms": 0.0003
+    }
+  ],
+  "positions": {
+    "enabled_bytes": 3966776,
+    "disabled_bytes": 3450946
+  }
+}
+
+STDERR:

@@ -1,0 +1,27 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.18, pytest-8.4.1, pluggy-1.6.0
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: <lab_python>\_work\submission-clean-20261111
+configfile: pyproject.toml
+plugins: anyio-4.9.0, hypothesis-6.135.26, benchmark-5.1.0, cov-6.2.1
+collected 2 items
+
+tests\test_benchmark.py ..                                               [100%]
+
+
+------------------------------------------------------------------------------------------------ benchmark: 4 tests -----------------------------------------------------------------------------------------------
+Name (time in us)                                 Min                 Max               Mean            StdDev             Median               IQR            Outliers  OPS (Kops/s)            Rounds  Iterations
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_benchmark_build (docs/benchmark_ba)      12.3000 (1.0)      180.6000 (4.08)     13.8745 (1.05)     4.7794 (6.27)     13.0000 (1.0)      0.4000 (2.00)    1426;3676       72.0747 (0.95)      31348           1
+test_benchmark_build (NOW)                    12.8000 (1.04)      44.3000 (1.0)      13.2025 (1.0)      0.7627 (1.0)      13.1000 (1.01)     0.2000 (1.0)      622;1149       75.7435 (1.0)       33899           1
+test_benchmark_search (NOW)                   20.5000 (1.67)     100.1000 (2.26)     21.6231 (1.64)     2.2260 (2.92)     21.2000 (1.63)     0.5000 (2.50)      228;513       46.2468 (0.61)       4968           1
+test_benchmark_search (docs/benchmark_ba)     20.6000 (1.67)     119.2000 (2.69)     23.5737 (1.79)     6.2207 (8.16)     21.8000 (1.68)     1.5000 (7.50)      223;498       42.4202 (0.56)       3864           1
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Legend:
+  Outliers: 1 Standard Deviation from Mean; 1.5 IQR (InterQuartile Range) from 1st Quartile and 3rd Quartile.
+  OPS: Operations Per Second, computed as 1 / Mean
+============================== 2 passed in 1.79s ==============================
+
+STDERR:
+Comparing against benchmarks from: docs\benchmark_baseline.json

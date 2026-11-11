@@ -1,0 +1,54 @@
+
+STDERR:
+Resolved 47 packages in 5ms
+Prepared 1 package in 14ms
+Installed 47 packages in 600ms
+ + annotated-types==0.7.0
+ + anyio==4.9.0
+ + certifi==2025.6.15
+ + charset-normalizer==3.4.2
+ + click==8.2.1
+ + colorama==0.4.6
+ + coloredlogs==15.0.1
+ + fastapi==0.115.14
+ + filelock==3.18.0
+ + findex==0.4.0 (from file:///<lab_python>/READY_TO_SUBMIT/Documentation/Releases/Submission/v0.4.0/findex-0.4.0-py3-none-any.whl)
+ + flatbuffers==25.2.10
+ + fsspec==2025.5.1
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + huggingface-hub==0.30.2
+ + humanfriendly==10.0
+ + idna==3.10
+ + jinja2==3.1.6
+ + markdown-it-py==3.0.0
+ + markupsafe==3.0.2
+ + mdurl==0.1.2
+ + mpmath==1.3.0
+ + numpy==2.2.6
+ + onnxruntime==1.22.0
+ + packaging==25.0
+ + protobuf==6.31.1
+ + pydantic==2.11.7
+ + pydantic-core==2.33.2
+ + pydantic-settings==2.10.1
+ + pygments==2.19.2
+ + pyreadline3==3.5.4
+ + python-dotenv==1.1.1
+ + pyyaml==6.0.2
+ + requests==2.32.4
+ + rich==14.0.0
+ + shellingham==1.5.4
+ + sniffio==1.3.1
+ + starlette==0.46.2
+ + sympy==1.14.0
+ + tokenizers==0.21.2
+ + tqdm==4.67.1
+ + typer==0.16.0
+ + typing-extensions==4.14.0
+ + typing-inspection==0.4.1
+ + urllib3==2.5.0
+ + uvicorn==0.35.0
+Installed 1 executable: findex
+warning: `<lab_python>\_work\release04-bin` is not on your PATH. To use installed tools, run `$env:PATH = "<lab_python>\_work\release04-bin;$env:PATH"` or `uv tool update-shell`.
