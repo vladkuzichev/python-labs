@@ -1,0 +1,231 @@
+{
+  "source_commit": "128b8124d0fd49b9b28ac75575140f5e454952cd",
+  "run_url": "https://github.com/editlikeorigin-afk/findex-python-labs/actions/runs/43060378368",
+  "benchmark_baseline_changed": false,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "job_id": 130661002531,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run astral-sh/setup-uv@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run uv sync --frozen",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run uv run python scripts/download_model.py",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run uv run ruff check .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run uv run ruff format --check .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run uv run pyright",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run uv run mypy",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run uv run pytest --cov=findex --benchmark-save=ci",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Run uv run pytest tests/test_benchmark.py --benchmark-compare=docs/benchmark_baseline.json --benchmark-compare-fail=mean:99%",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 11
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@v6",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 21
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ],
+      "benchmark_display_mean_us": {
+        "build": 25.3689,
+        "search": 59.3718
+      },
+      "search_difference_percent": 151.85636486
+    },
+    {
+      "attempt": 2,
+      "status": "completed",
+      "conclusion": "failure",
+      "job_id": 130668841935,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run astral-sh/setup-uv@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run uv sync --frozen",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run uv run python scripts/download_model.py",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run uv run ruff check .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run uv run ruff format --check .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run uv run pyright",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run uv run mypy",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run uv run pytest --cov=findex --benchmark-save=ci",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Run uv run pytest tests/test_benchmark.py --benchmark-compare=docs/benchmark_baseline.json --benchmark-compare-fail=mean:99%",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 11
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@v6",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 21
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ],
+      "benchmark_display_mean_us": {
+        "build": 25.7954,
+        "search": 57.2982
+      },
+      "search_difference_percent": 143.060086288
+    }
+  ],
+  "runner": {
+    "os": "Windows Server 2025",
+    "python": "3.13.17",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "allocated_cpus": 4
+  },
+  "reference_baseline": {
+    "file": "docs/benchmark_baseline.json",
+    "os": "Windows 11",
+    "python": "3.13.18",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+    "display_mean_us": {
+      "build": 13.8745,
+      "search": 23.5737
+    }
+  },
+  "local_recheck": {
+    "date": "2026-11-11",
+    "os": "Windows 11",
+    "python": "3.13.18",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+    "exit_code": 0,
+    "tests_passed": 2,
+    "display_mean_us": {
+      "build": 13.202,
+      "search": 21.3924
+    },
+    "raw_log_in_offline_kit": "Tests/editorial-benchmark-comparison.log"
+  },
+  "limitation": "Порівняння часу різних машин не доводить регресію коду. Порогове порівняння CI завершилося помилкою; локальна перевірка пройшла. Початкову базу й вимірювання не змінено."
+}
