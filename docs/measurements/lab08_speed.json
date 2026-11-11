@@ -1,0 +1,50 @@
+[
+  {
+    "scorer": "bm25",
+    "query": "the",
+    "matched": 2495,
+    "python_ms": 2.3699000000000003,
+    "numpy_ms": 0.25055,
+    "speedup": 9.458790660546798
+  },
+  {
+    "scorer": "bm25",
+    "query": "zscore",
+    "matched": 1,
+    "python_ms": 0.0071,
+    "numpy_ms": 0.0188,
+    "speedup": 0.3776595744680851
+  },
+  {
+    "scorer": "bm25",
+    "query": "the file return",
+    "matched": 111,
+    "python_ms": 0.31555,
+    "numpy_ms": 0.18464999999999998,
+    "speedup": 1.7089087462767398
+  },
+  {
+    "scorer": "tfidf",
+    "query": "the",
+    "matched": 2495,
+    "python_ms": 1.76065,
+    "numpy_ms": 0.25949999999999995,
+    "speedup": 6.7847784200385375
+  },
+  {
+    "scorer": "tfidf",
+    "query": "zscore",
+    "matched": 1,
+    "python_ms": 0.0061,
+    "numpy_ms": 0.016,
+    "speedup": 0.38125000000000003
+  },
+  {
+    "scorer": "tfidf",
+    "query": "the file return",
+    "matched": 111,
+    "python_ms": 0.24105,
+    "numpy_ms": 0.17,
+    "speedup": 1.417941176470588
+  }
+]

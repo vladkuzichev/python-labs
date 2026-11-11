@@ -32,10 +32,10 @@ def main():
         "SSL_CERT_FILE": certifi.where(),
         "PYTHONUTF8": "1",
     }
-    oha_candidates=[Path('../Offline/oha.exe'),Path('../../_work/oha.exe')]
-    oha=next((p.resolve() for p in oha_candidates if p.exists()),None)
+    oha_candidates = [Path("../Offline/oha.exe"), Path("../../_work/oha.exe")]
+    oha = next((p.resolve() for p in oha_candidates if p.exists()), None)
     if oha is None:
-        raise FileNotFoundError('Не знайдено Offline/oha.exe')
+        raise FileNotFoundError("Не знайдено Offline/oha.exe")
     try:
         for port, style, workers in [(8001, "async", 1), (8002, "sync", 4)]:
             handle = (root / f"lab07_server_{port}.log").open("w", encoding="utf-8")

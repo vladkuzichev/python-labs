@@ -1,0 +1,106 @@
+[
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\index.py",
+    "function": "Index.num_docs",
+    "python_percent": 0.03677410546919429,
+    "native_percent": 0.0751789137990111,
+    "system_percent": 0.0559765096341027
+  },
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\index.py",
+    "function": "Index.doc_length",
+    "python_percent": 0.5416773684528786,
+    "native_percent": 3.7847557245964225,
+    "system_percent": 0.029756314458306437
+  },
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\index.py",
+    "function": "Index.df",
+    "python_percent": 0.043944878441315484,
+    "native_percent": 0.7925321022511137,
+    "system_percent": 0.013397310608007447
+  },
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\scoring.py",
+    "function": "BM25.score",
+    "python_percent": 0.5961725159072911,
+    "native_percent": 2.103226031964223,
+    "system_percent": 0.9752703665759139
+  },
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\search.py",
+    "function": "SearchResult.__post_init__",
+    "python_percent": 0.00307453126752781,
+    "native_percent": 0.14378341442958528,
+    "system_percent": 0.0
+  },
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\search.py",
+    "function": "search",
+    "python_percent": 1.4278045421446386,
+    "native_percent": 2.4301988990631607,
+    "system_percent": 0.981337113483003
+  },
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\_work\\runtime\\python\\Lib\\heapq.py",
+    "function": "nlargest",
+    "python_percent": 0.14319964583662542,
+    "native_percent": 0.349747128158846,
+    "system_percent": 0.0724350726875534
+  },
+  {
+    "profile": "scalene-before.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\_work\\runtime\\python\\Lib\\threading.py",
+    "function": "Thread.run",
+    "python_percent": 13.761838547743906,
+    "native_percent": 55.047354190975575,
+    "system_percent": 14.524140594613815
+  },
+  {
+    "profile": "scalene-index-baseline.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\corpus.py",
+    "function": "iter_documents",
+    "python_percent": 2.9987676386820916,
+    "native_percent": 10.691294869045668,
+    "system_percent": 1.2215756448422022
+  },
+  {
+    "profile": "scalene-index-baseline.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\_work\\runtime\\python\\Lib\\threading.py",
+    "function": "Thread.run",
+    "python_percent": 15.30267884437022,
+    "native_percent": 61.210715377480895,
+    "system_percent": 6.819939111482239
+  },
+  {
+    "profile": "scalene-load-baseline.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\instrument.py",
+    "function": "timed.<locals>.wrapper",
+    "python_percent": 0.0,
+    "native_percent": 0.49078389200528083,
+    "system_percent": 0.0007485150697194085
+  },
+  {
+    "profile": "scalene-load-baseline.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\store.py",
+    "function": "from_dict",
+    "python_percent": 7.127969493415781,
+    "native_percent": 17.16999545216776,
+    "system_percent": 27.31736383422666
+  },
+  {
+    "profile": "scalene-load-baseline.json",
+    "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\store.py",
+    "function": "load",
+    "python_percent": 0.0,
+    "native_percent": 7.915552981704053,
+    "system_percent": 39.586537149787794
+  }
+]

@@ -16,8 +16,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from findex.index import Index
-from findex.search import candidate_ids, search
-from findex.scoring import BM25, TfIdf
+from findex.retrieval import SearchMode, retrieve
+from findex.search import candidate_ids
 from findex.store import load
 from findex.web.models import DocumentOut, ResultOut, SearchResponse, StatsOut
 from findex.web.settings import Settings
@@ -39,15 +39,41 @@ def get_settings(request: Request) -> Settings:
     return cast(Settings, request.app.state.settings)
 
 
-def execute(index: Index,q: str,k: int,scorer: ScorerName,page: int) -> SearchResponse:
-    started=time.perf_counter()
+def execute(
+    index: Index,
+    q: str,
+    k: int,
+    scorer: ScorerName,
+    page: int,
+    mode: SearchMode = "keyword",
+    settings: Settings | None = None,
+) -> SearchResponse:
+    started = time.perf_counter()
     try:
-        total=len(candidate_ids(index,q))
-        ranked=search(index,q,k=min(k*page,index.num_docs or 1),scorer=BM25() if scorer=='bm25' else TfIdf())
+        total = len(candidate_ids(index, q)) if mode == "keyword" else index.num_docs
+        config = settings or Settings()
+        ranked = retrieve(
+            index,
+            q,
+            k=min(k * page, index.num_docs or 1),
+            scorer=scorer,
+            mode=mode,
+            backend=config.backend,
+            embeddings_path=config.embeddings_path,
+            model_path=config.model_path,
+        )
     except ValueError as error:
-        raise HTTPException(400,str(error)) from error
-    return SearchResponse(query=q,total=total,took_ms=(time.perf_counter()-started)*1000,
-                          results=[ResultOut.model_validate(r) for r in ranked[(page-1)*k:page*k]])
+        raise HTTPException(400, str(error)) from error
+    except OSError as error:
+        logger.error("semantic_load_failed error=%s", error)
+        raise HTTPException(503, "Семантичний індекс не підготовлено") from error
+    selected = ranked[(page - 1) * k : page * k]
+    return SearchResponse(
+        query=q,
+        total=total,
+        took_ms=(time.perf_counter() - started) * 1000,
+        results=[ResultOut.model_validate(r) for r in selected],
+    )
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -68,7 +94,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         if index is not None:
             index.close()
 
-    application = FastAPI(title="findex", version="0.7.0", lifespan=lifespan)
+    application = FastAPI(title="findex", version="1.0.0", lifespan=lifespan)
     application.state.settings = config
     application.state.index = None
     application.state.started = time.perf_counter()
@@ -97,8 +123,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         k: Annotated[int, Query(ge=1, le=100)] = 10,
         scorer: ScorerName = "bm25",
         page: Annotated[int, Query(ge=1, le=10000)] = 1,
+        mode: SearchMode = "keyword",
     ) -> SearchResponse:
-        return execute(index, q, k, scorer, page)
+        return execute(index, q, k, scorer, page, mode, settings)
 
     async def search_async(
         q: Annotated[str, Query(min_length=1, max_length=1000)],
@@ -107,9 +134,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         k: Annotated[int, Query(ge=1, le=100)] = 10,
         scorer: ScorerName = "bm25",
         page: Annotated[int, Query(ge=1, le=10000)] = 1,
+        mode: SearchMode = "keyword",
     ) -> SearchResponse:
         # Лише контрольний режим benchmark: демонструє блокування CPU-роботою.
-        return execute(index, q, k, scorer, page)
+        return execute(index, q, k, scorer, page, mode, settings)
 
     application.add_api_route(
         "/search",
@@ -147,8 +175,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         q: Annotated[str, Query(max_length=1000)] = "",
         page: Annotated[int, Query(ge=1, le=10000)] = 1,
         scorer: ScorerName = "bm25",
+        mode: SearchMode = "keyword",
     ) -> Response:
-        result = execute(index, q, 5, scorer, page) if q.strip() else None
+        result = execute(index, q, 5, scorer, page, mode, config) if q.strip() else None
         return templates.TemplateResponse(
             request=request,
             name="search.html",
@@ -157,6 +186,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 "q": q,
                 "page": page,
                 "scorer": scorer,
+                "mode": mode,
                 "documents": index.num_docs,
             },
         )

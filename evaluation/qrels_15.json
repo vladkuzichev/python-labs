@@ -1,0 +1,164 @@
+[
+  {
+    "query": "event loop",
+    "relevant": [
+      266,
+      271,
+      272,
+      284,
+      285
+    ],
+    "intent": "Керування циклом asyncio"
+  },
+  {
+    "query": "json",
+    "relevant": [
+      1349,
+      1350,
+      1351,
+      1352,
+      1353
+    ],
+    "intent": "Серіалізація і десеріалізація JSON"
+  },
+  {
+    "query": "regular expression",
+    "relevant": [
+      1813,
+      1814,
+      1815,
+      1816,
+      1820
+    ],
+    "intent": "Регулярні вирази"
+  },
+  {
+    "query": "thread",
+    "relevant": [
+      2060,
+      2062,
+      2085,
+      2086,
+      2087
+    ],
+    "intent": "Потік і його життєвий цикл"
+  },
+  {
+    "query": "queue",
+    "relevant": [
+      1785,
+      1786,
+      1790,
+      1791,
+      1789
+    ],
+    "intent": "Операції черги"
+  },
+  {
+    "query": "cache",
+    "relevant": [
+      1010
+    ],
+    "intent": "LRU-кешування результатів функції"
+  },
+  {
+    "query": "gzip file",
+    "relevant": [
+      1040,
+      1041
+    ],
+    "intent": "Стиснені файли gzip"
+  },
+  {
+    "query": "socket",
+    "relevant": [
+      1912,
+      1914,
+      1915
+    ],
+    "intent": "Мережеві сокети"
+  },
+  {
+    "query": "url parse",
+    "relevant": [
+      2579,
+      2580,
+      2581,
+      2586,
+      2587
+    ],
+    "intent": "Розбір URL"
+  },
+  {
+    "query": "file digest",
+    "relevant": [
+      1044
+    ],
+    "intent": "Контрольна сума файла"
+  },
+  {
+    "query": "memoization",
+    "relevant": [
+      1010
+    ],
+    "intent": "Збереження результатів повторного обчислення",
+    "paraphrase": true,
+    "overlap": {
+      "1010": []
+    }
+  },
+  {
+    "query": "decompression",
+    "relevant": [
+      1040,
+      1041
+    ],
+    "intent": "Розпакування стисненого вмісту",
+    "paraphrase": true,
+    "overlap": {
+      "1040": [],
+      "1041": []
+    }
+  },
+  {
+    "query": "checksum",
+    "relevant": [
+      1044
+    ],
+    "intent": "Контрольна сума",
+    "paraphrase": true,
+    "overlap": {
+      "1044": []
+    }
+  },
+  {
+    "query": "deserialization",
+    "relevant": [
+      1352,
+      1353
+    ],
+    "intent": "Перетворення текстового представлення в об’єкт",
+    "paraphrase": true,
+    "overlap": {
+      "1352": [],
+      "1353": []
+    }
+  },
+  {
+    "query": "FIFO",
+    "relevant": [
+      1785,
+      1786,
+      1790,
+      1791
+    ],
+    "intent": "Черга: першим прийшов — першим вийшов",
+    "paraphrase": true,
+    "overlap": {
+      "1785": [],
+      "1786": [],
+      "1790": [],
+      "1791": []
+    }
+  }
+]

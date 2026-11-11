@@ -1,0 +1,60 @@
+[
+  {
+    "operation": "index",
+    "hotspots": [
+      {
+        "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\index.py",
+        "line": 80,
+        "function": "build_index",
+        "self_s": 0.7458806,
+        "cumulative_s": 1.8317669,
+        "calls": 5
+      },
+      {
+        "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\tokenize.py",
+        "line": 10,
+        "function": "tokenize",
+        "self_s": 0.3504569,
+        "cumulative_s": 0.4634075,
+        "calls": 966950
+      },
+      {
+        "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\corpus.py",
+        "line": 22,
+        "function": "iter_documents",
+        "self_s": 0.040817400000000004,
+        "cumulative_s": 0.11904350000000001,
+        "calls": 14370
+      }
+    ]
+  },
+  {
+    "operation": "search",
+    "hotspots": [
+      {
+        "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\scoring.py",
+        "line": 29,
+        "function": "score",
+        "self_s": 0.12417860000000001,
+        "cumulative_s": 0.24714490000000003,
+        "calls": 166500
+      },
+      {
+        "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\search.py",
+        "line": 78,
+        "function": "search",
+        "self_s": 0.0928626,
+        "cumulative_s": 0.3891735,
+        "calls": 500
+      },
+      {
+        "file": "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\src\\findex\\store.py",
+        "line": 31,
+        "function": "from_dict",
+        "self_s": 0.075933,
+        "cumulative_s": 0.14416520000000002,
+        "calls": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,105 @@
+[
+  {
+    "check": "ruff_check",
+    "exit_code": 0,
+    "elapsed_s": 0.19303839999884076,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "."
+    ]
+  },
+  {
+    "check": "ruff_format",
+    "exit_code": 0,
+    "elapsed_s": 0.19062579999990703,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ]
+  },
+  {
+    "check": "pyright",
+    "exit_code": 0,
+    "elapsed_s": 2.015845199999603,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pyright"
+    ]
+  },
+  {
+    "check": "mypy",
+    "exit_code": 0,
+    "elapsed_s": 0.6059734000009485,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy"
+    ]
+  },
+  {
+    "check": "pytest_full",
+    "exit_code": 0,
+    "elapsed_s": 9.409487300001274,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--cov=findex",
+      "--cov-report=term-missing",
+      "--cov-report=json:../Tests/final_coverage.json",
+      "--junitxml=../Tests/final_junit.xml",
+      "--benchmark-json=../Tests/final_benchmark.json"
+    ]
+  },
+  {
+    "check": "benchmark_regression",
+    "exit_code": 0,
+    "elapsed_s": null,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_benchmark.py",
+      "-q",
+      "--benchmark-compare=docs/benchmark_baseline.json",
+      "--benchmark-compare-fail=mean:99%"
+    ],
+    "verified_from": "final_benchmark_regression.log; successful command observed in tool result"
+  },
+  {
+    "check": "uv_lock",
+    "exit_code": 0,
+    "elapsed_s": 0.07218099999954575,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Offline\\uv.exe",
+      "lock",
+      "--check",
+      "--offline"
+    ]
+  },
+  {
+    "check": "model_sha256",
+    "exit_code": 0,
+    "elapsed_s": 0.12394940000012866,
+    "command": [
+      "C:\\Users\\kuzic\\OneDrive\\Desktop\\lab_python\\READY_TO_SUBMIT\\Project\\.venv\\Scripts\\python.exe",
+      "scripts/download_model.py",
+      "--check"
+    ]
+  },
+  {
+    "check": "scalene_native_exit",
+    "exit_code": 0,
+    "evidence": "scalene_native_exit.json",
+    "elapsed_s": null
+  }
+]

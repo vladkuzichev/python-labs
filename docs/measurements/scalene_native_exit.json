@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "\nScalene: profile saved to docs\\scalene-confirmed.json\n  To view in browser:  scalene view docs\\scalene-confirmed.json\n  To view in terminal: scalene view --cli docs\\scalene-confirmed.json\n"
+}

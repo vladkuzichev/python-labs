@@ -5,7 +5,10 @@
 <main><div class="eyebrow">ЛАБОРАТОРНІ РОБОТИ 1–8 · ПРОГРАМУВАННЯ PYTHON</div>
 <h1>Знайти відповідь<br>у документації.</h1><p class="intro">{{ documents }} документів стандартної бібліотеки Python. Терміни, фрази та логічні оператори в одному пошуку.</p>
 <form action="/" method="get"><label for="q">Пошуковий запит</label><div class="searchbar"><input id="q" name="q" value="{{ q }}" placeholder='Наприклад: "event loop" OR asyncio' required maxlength="1000"><button type="submit">Знайти →</button></div>
-<div class="options"><label for="scorer">Ранжування</label><select id="scorer" name="scorer"><option value="bm25" {% if scorer=='bm25' %}selected{% endif %}>BM25</option><option value="tfidf" {% if scorer=='tfidf' %}selected{% endif %}>TF-IDF</option></select></div></form>
+<div class="options"><label for="scorer">Ранжування</label><select id="scorer" name="scorer"><option value="bm25" {% if scorer=='bm25' %}selected{% endif %}>BM25</option><option value="tfidf" {% if scorer=='tfidf' %}selected{% endif %}>TF-IDF</option></select><label for="mode">Режим</label><select id="mode" name="mode">
+<option value="keyword" {% if mode=='keyword' %}selected{% endif %}>Ключові слова</option>
+<option value="semantic" {% if mode=='semantic' %}selected{% endif %}>Семантичний</option>
+<option value="hybrid" {% if mode=='hybrid' %}selected{% endif %}>Гібридний · RRF</option></select></div></form>
 {% if result %}<div class="resultsmeta">Знайдено: {{ result.total }} · {{ '%.2f'|format(result.took_ms) }} мс · сторінка {{ page }}</div>
 {% for r in result.results %}<article class="result"><div class="resulttop">ДОКУМЕНТ {{ r.doc_id }}<span>{{ '%.5f'|format(r.score) }} балів</span></div><h2><a href="/doc/{{ r.doc_id }}">{{ r.title }}</a></h2><p>{{ r.snippet|safe }}</p></article>{% endfor %}
 {% if not result.results %}<p class="empty">Збігів немає. Спробуйте інші терміни або оператор OR.</p>{% endif %}

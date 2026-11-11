@@ -5,4 +5,4 @@ services:
     healthCheckPath: /health
     envVars:
       - key: INDEX_PATH
-        value: /data/index.bin
+        value: /app/data/index.npz

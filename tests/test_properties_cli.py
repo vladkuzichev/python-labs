@@ -1,4 +1,6 @@
 import json
+import tempfile
+from pathlib import Path
 
 from hypothesis import given, settings
 from hypothesis import strategies as st
@@ -8,7 +10,7 @@ from findex.boolean import difference, intersect, union
 from findex.cli import app
 from findex.corpus import Document
 from findex.index import build_index
-from findex.store import from_dict, save, to_dict
+from findex.store import load, save, to_dict
 from findex.tokenize import tokenize
 
 
@@ -24,7 +26,11 @@ def test_property_merge(a, b):
 @settings(max_examples=40)
 def test_property_roundtrip(texts):
     index = build_index(Document(i, str(i), t) for i, t in enumerate(texts))
-    assert to_dict(from_dict(to_dict(index))) == to_dict(index)
+    with tempfile.TemporaryDirectory(prefix="findex-roundtrip-") as directory:
+        for suffix in [".json", ".bin"]:
+            path = Path(directory) / ("index" + suffix)
+            save(index, path)
+            assert to_dict(load(path)) == to_dict(index)
     for values in index.postings.values():
         ids = [p.doc_id for p in values]
         assert ids == sorted(set(ids))

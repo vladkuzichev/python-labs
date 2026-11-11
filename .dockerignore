@@ -1,9 +1,15 @@
 .venv
 .git
-data
-models
+data/*
+!data/index.npz
+!data/embeddings/
+!data/embeddings/**
+models/*
+!models/all-MiniLM-L6-v2/
+!models/all-MiniLM-L6-v2/**
 dist
 __pycache__
 .pytest_cache
 htmlcov
 .coverage
+.env

@@ -10,7 +10,11 @@ FROM python:3.13-slim
 RUN useradd --create-home --uid 10001 findex
 WORKDIR /app
 COPY --from=builder --chown=findex:findex /app /app
-ENV PATH="/app/.venv/bin:$PATH" INDEX_PATH="/data/index.bin" PYTHONUNBUFFERED=1
+COPY --chown=findex:findex data/index.npz /app/data/index.npz
+COPY --chown=findex:findex data/embeddings /app/data/embeddings
+COPY --chown=findex:findex models/all-MiniLM-L6-v2 /app/models/all-MiniLM-L6-v2
+ENV PATH="/app/.venv/bin:$PATH" INDEX_PATH="/app/data/index.npz" PYTHONUNBUFFERED=1
+ENV MODEL_PATH="/app/models/all-MiniLM-L6-v2" EMBEDDINGS_PATH="/app/data/embeddings"
 USER findex
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"

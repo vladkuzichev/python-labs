@@ -102,7 +102,7 @@ def search(
                 scores[posting.doc_id] += scorer.score(term, posting, index)
     for doc_id in allowed:
         scores.setdefault(doc_id, 0.0)
-    best = nlargest(k, scores, key=lambda doc_id: (scores[doc_id], -doc_id))
+    best = nlargest(k, scores, key=lambda doc_id: (round(scores[doc_id], 12), -doc_id))
     return [
         SearchResult(
             i,

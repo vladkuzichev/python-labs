@@ -52,6 +52,11 @@ def from_dict(data: dict[str, Any]) -> Index:
 
 
 def save(index: Index, path: Path, *, format: Format | None = None) -> None:
+    if path.suffix == ".npz":
+        from findex.vector import save_numpy
+
+        save_numpy(index, path)
+        return
     path.parent.mkdir(parents=True, exist_ok=True)
     kind = format or ("json" if path.suffix == ".json" else "pickle")
     if kind == "json":
@@ -63,6 +68,10 @@ def save(index: Index, path: Path, *, format: Format | None = None) -> None:
 
 @timed
 def load(path: Path, *, format: Format | None = None) -> Index:
+    if path.suffix == ".npz":
+        from findex.vector import load_numpy
+
+        return load_numpy(path)
     kind = format or ("json" if path.suffix == ".json" else "pickle")
     if kind == "json":
         with path.open(encoding="utf-8") as stream:

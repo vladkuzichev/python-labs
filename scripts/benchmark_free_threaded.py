@@ -11,10 +11,13 @@ import psutil
 
 
 def main():
-    candidates=[Path('../RuntimeFreeThreaded/python/python.exe'),Path('../../_work/runtime-t/python/python.exe')]
-    interpreter=next((p.resolve() for p in candidates if p.exists()),None)
+    candidates = [
+        Path("../RuntimeFreeThreaded/python/python.exe"),
+        Path("../../_work/runtime-t/python/python.exe"),
+    ]
+    interpreter = next((p.resolve() for p in candidates if p.exists()), None)
     if interpreter is None:
-        raise FileNotFoundError('Потрібен RuntimeFreeThreaded/python/python.exe')
+        raise FileNotFoundError("Потрібен RuntimeFreeThreaded/python/python.exe")
     env = {**os.environ, "PYTHONPATH": str(Path("src").resolve()), "PYTHONUTF8": "1"}
     rows = []
     for workers in sorted({1, 2, 4, 8, os.cpu_count() or 1}):

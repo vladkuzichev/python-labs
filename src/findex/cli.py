@@ -10,8 +10,8 @@ import re
 import sys
 import time
 from collections import Counter
-from dataclasses import asdict
 from collections.abc import Callable, Iterator
+from dataclasses import asdict
 from enum import Enum
 from functools import wraps
 from itertools import islice
@@ -20,16 +20,15 @@ from typing import Annotated
 
 import typer
 from rich.console import Console
+from rich.live import Live
 from rich.progress import track
 from rich.table import Table
 from rich.text import Text
-from rich.live import Live
 
 from findex.corpus import Document, iter_documents
 from findex.index import build_index
 from findex.parallel import build_parallel
-from findex.scoring import BM25, TfIdf
-from findex.search import search as run_search
+from findex.retrieval import retrieve
 from findex.store import load, save
 
 app = typer.Typer(
@@ -47,9 +46,20 @@ class EngineOption(str, Enum):
 
 
 class ExecutorOption(str, Enum):
-    serial="serial"
-    threads="threads"
-    processes="processes"
+    serial = "serial"
+    threads = "threads"
+    processes = "processes"
+
+
+class ModeOption(str, Enum):
+    keyword = "keyword"
+    semantic = "semantic"
+    hybrid = "hybrid"
+
+
+class BackendOption(str, Enum):
+    python = "python"
+    numpy = "numpy"
 
 
 def expected_errors[**P, T](function: Callable[P, T]) -> Callable[P, T]:
@@ -78,7 +88,7 @@ def configure(verbose: Annotated[int, typer.Option("--verbose", "-v", count=True
 @expected_errors
 def index_command(
     corpus: Path,
-    out: Annotated[Path, typer.Option("--out")] = Path("data/index.bin"),
+    out: Annotated[Path, typer.Option("--out")] = Path("data/index.npz"),
     positions: bool = False,
     limit: Annotated[int | None, typer.Option(min=0)] = None,
     workers: Annotated[int, typer.Option(min=1)] = 1,
@@ -96,7 +106,9 @@ def index_command(
     if executor == ExecutorOption.serial and workers == 1:
         index = build_index(documents(), positions=positions)
     else:
-        index, metrics = build_parallel(corpus, workers=workers, executor=executor.value, positions=positions, limit=limit)
+        index, metrics = build_parallel(
+            corpus, workers=workers, executor=executor.value, positions=positions, limit=limit
+        )
         logging.getLogger(__name__).info("build metrics=%s", metrics)
     save(index, out)
     console.print(
@@ -114,16 +126,24 @@ def search_command(
     scorer: Annotated[str, typer.Option()] = "bm25",
     engine: EngineOption = EngineOption.merge,
     json_output: Annotated[bool, typer.Option("--json")] = False,
+    mode: ModeOption = ModeOption.keyword,
+    backend: BackendOption = BackendOption.numpy,
+    embeddings_path: Path = Path("data/embeddings"),
+    model_path: Path = Path("models/all-MiniLM-L6-v2"),
 ) -> None:
     if scorer not in {"bm25", "tfidf"}:
         raise ValueError("scorer: bm25 або tfidf")
     index = load(index_path)
-    results = run_search(
+    results = retrieve(
         index,
         query,
-        scorer=BM25() if scorer == "bm25" else TfIdf(),
+        scorer="bm25" if scorer == "bm25" else "tfidf",
         k=k,
+        mode=mode.value,
+        backend=backend.value,
         engine=engine.value,
+        embeddings_path=embeddings_path,
+        model_path=model_path,
     )
     if json_output:
         for result in results:
@@ -226,7 +246,6 @@ def crawl_command(
     console.print(f"Зібрано {state.pages} сторінок: {out}")
 
 
-
 @app.command("serve")
 @expected_errors
 def serve_command(
@@ -238,6 +257,29 @@ def serve_command(
 
     uvicorn.run("findex.web.app:app", host=host, port=port, workers=workers)
 
+
+@app.command("embed")
+@expected_errors
+def embed_command(
+    index_path: Path,
+    out: Path = Path("data/embeddings"),
+    model: str = "all-MiniLM-L6-v2",
+    model_path: Path = Path("models/all-MiniLM-L6-v2"),
+) -> None:
+    from rich.progress import Progress
+
+    from findex.semantic import MiniLM, embed
+
+    if model != "all-MiniLM-L6-v2":
+        raise ValueError("Підтримується локальна ONNX-модель all-MiniLM-L6-v2")
+    with Progress(console=diagnostics, disable=not diagnostics.is_terminal) as progress:
+        task = progress.add_task("Ембеддинги", total=None)
+
+        def update(done: int, total: int) -> None:
+            progress.update(task, total=total, completed=done)
+
+        result = embed(load(index_path), MiniLM(model_path), out, progress=update)
+    console.print_json(data=result)
 
 
 if __name__ == "__main__":

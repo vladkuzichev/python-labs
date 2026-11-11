@@ -6,7 +6,7 @@ import argparse
 import time
 import tracemalloc
 from collections import defaultdict
-from collections.abc import Iterable, Iterator
+from collections.abc import Iterable, Iterator, Sequence
 from dataclasses import dataclass, field
 from functools import cached_property
 from itertools import islice
@@ -33,13 +33,13 @@ class DocMeta:
 
 @dataclass(eq=False)
 class Index:
-    postings: dict[str, list[Posting]]
+    postings: dict[str, Sequence[Posting]]
     doc_lengths: dict[int, int]
     doc_meta: dict[int, DocMeta]
     positions: bool = False
     closed: bool = field(default=False, init=False)
 
-    def __getitem__(self, term: str) -> list[Posting]:
+    def __getitem__(self, term: str) -> Sequence[Posting]:
         if self.closed:
             raise ValueError("Індекс закрито")
         return self.postings[term]
@@ -71,9 +71,19 @@ class Index:
         return len(self.postings.get(term, []))
 
     def close(self) -> None:
+        import sys
+
         from findex.search import candidate_ids
 
         candidate_ids.cache_clear()
+        if "findex.vector" in sys.modules:
+            from findex.vector import vector_index
+
+            vector_index.cache_clear()
+        if "findex.semantic" in sys.modules:
+            from findex.semantic import get_semantic
+
+            get_semantic.cache_clear()
         self.closed = True
 
 
