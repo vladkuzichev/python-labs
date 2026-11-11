@@ -1,11 +1,14 @@
 {
   "version": "0.4.0",
-  "source_tag": "lab-04",
-  "source_sha": "e70bf8900b698d32a71559fc4b8effe63b54ff6c",
-  "wheel_python_files_match_tag": true,
+  "code_tag": "v0.4.0",
+  "code_tag_sha": "e70bf8900b698d32a71559fc4b8effe63b54ff6c",
+  "source_ref": "text-review/lab-04",
+  "source_sha": "3e8a08c1f06efd24afa08913be3aa09897174cba",
+  "documentation_edited": true,
+  "wheel_python_files_match_version_tag": true,
   "sha256": {
     "findex-0.4.0-py3-none-any.whl": "56954b2f57862882b576ea64056fd929b439922d21ec09d1f1aa878a962dc87d",
-    "findex-0.4.0.tar.gz": "767121200bbaa066e0f483c60647187c8e7a58116884042d2fbe90bea878b1d1"
+    "findex-0.4.0.tar.gz": "e9396f4f424aeb127fa97e841ea0b2818e1926b190fddecbf121c0a75dc6124f"
   },
   "published": false
 }

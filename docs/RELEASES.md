@@ -9,8 +9,8 @@ API Releases повернув порожній список під час пер
 
 | Пакет | Source | Готовий опис | Перевірка |
 |---|---|---|---|
-| v0.4.0, обов'язковий №4 | незмінний lab-04 / e70bf890 | [текст](releases/v0.4.0.md) | [SHA256 і побайтова звірка wheel/source](evidence/release-v0.4.0-manifest.json) |
-| v1.0.0, додатковий | незмінний lab-08 / b02d1be2 | [текст](releases/v1.0.0.md) | [SHA256 і звірка](evidence/release-v1.0.0-manifest.json) |
+| v0.4.0, обов'язковий №4 | text-review/lab-04; код v0.4.0 збережено | [текст](releases/v0.4.0.md) | [SHA256 і побайтова звірка wheel/source](evidence/release-v0.4.0-manifest.json) |
+| v1.0.0, додатковий | text-review/lab-08; код v1.0.0 збережено | [текст](releases/v1.0.0.md) | [SHA256 і звірка](evidence/release-v1.0.0-manifest.json) |
 
 Локальне розміщення поза публічним Git: `READY_TO_SUBMIT/Documentation/Releases/Submission/v0.4.0/`
 і `.../v1.0.0/`. Кожна папка містить wheel, sdist та SHA256SUMS.txt; тексти опису скопійовано поруч.
@@ -24,7 +24,7 @@ gh release create v0.4.0 --repo editlikeorigin-afk/findex-python-labs --verify-t
 ```
 
 Якщо `gh` не встановлено, в локальному комплекті використовується
-`../../GitHub_Publish/gh/bin/gh.exe` (PowerShell: `&` перед цим шляхом) або офіційний GitHub CLI.
+`../SubmissionTools/gh.exe` (PowerShell: `&` перед цим шляхом) або офіційний GitHub CLI.
 Повторний `release create` для наявного Release завершується помилкою, не перезаписує його.
 Перед повторною спробою потрібно перевірити фактичний стан через `gh release view v0.4.0 --repo editlikeorigin-afk/findex-python-labs`.
 

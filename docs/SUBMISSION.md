@@ -102,27 +102,24 @@ Notes №7 радять падіння startup без індексу, а Classro
 | 08 | Теги, звіт, Reflection/showcase | [lab-08](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-08), [v1.0.0](https://github.com/editlikeorigin-afk/findex-python-labs/tree/v1.0.0), `Reports/Lab_08.docx`, [Reflection](DEFENSE.md#lab-08) | Теги перевірено; сценарій підготовлено, усний захист не виконано |
 | 08 | GitHub Release | Оригінальне завдання №8 | Потрібні version/tag; окремий Release прямо не зазначений; опис v1.0.0 підготовлено додатково |
 
-## Посилання для Classroom та стан історичних тегів
+## Посилання для Classroom та стан тегів
 
-Усі вісім refs перевірено через GitHub API і порівняно з локальним Git.
-Жодний опублікований тег не пересувався й не переписувався. Повний список файлів у кожному —
-[tag-audit.json](evidence/tag-audit.json). Нові виправлення додаються наступним комітом main,
-тому для здачі до відповідного тегу потрібно додати посилання на актуальні README/SUBMISSION.
+Виправлені тексти всіх восьми етапів опубліковано в окремих гілках. Теги lab-01–lab-08
+поки вказують на попередні коміти: їх оновлення не виконано через недоступність Git-з’єднання.
+Версійні теги v0.4.0, v0.7.0 і v1.0.0 залишено без змін. Історію Git збережено.
+Для перегляду актуальних текстів слід користуватися гілками в таблиці та документацією main.
+[Початкова перевірка вмісту тегів](evidence/tag-audit.json) описує попередні коміти.
 
-| Робота | Посилання для здачі | Незакритий пункт / недолік саме тегу |
-|---|---|---|
-| 01 | [lab-01](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-01) | Код/таблиця є; старий provenance-текст «не опубліковано» збережено в immutable snapshot |
-| 02 | [lab-02](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-02) | Код є; README ідентичний lab-01, таблиці №2 у ньому відсутні; вони є в main |
-| 03 | [lab-03](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-03) | Є код/P@5; повної sanity-таблиці корпусу та cache-log у тегу немає; попередні qrels не hand labels |
-| 04 | [lab-04](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-04) | CLI/tests/CI/version є; README не має свого coverage/badge/інструкції wheel; Release відсутній |
-| 05 | [lab-05](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-05) | Таблиця/plot/GIL/3.13t є; старі спільні README-обмеження не переписано |
-| 06 | [lab-06](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-06) | Crawl/таблиця є; failure log був лише в окремому комплекті, startup-fix з'явився після тегу |
-| 07 | [lab-07](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-07) | API/UI/tests/local timings є; cloud URL/deployed oha відсутні; старий Dockerfile залежав від незакомічених assets |
-| 08 | [lab-08](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-08) | Код/медіа/JSON є; старі README-статуси/посилання, deployment і повний Scalene breakdown не закрито |
-
-Без дозволу на перенесення тегів їхні недоліки усуваються лише доповненням у main.
-Якщо викладач вимагає, щоб кожен старий тег сам по собі містив усі докази, потрібно узгодити
-додатковий correction-tag або прийнятність посилання на main. Самостійне перезаписування заборонене.
+| Робота | Тег для здачі | Виправлена версія | Матеріали та обмеження |
+|---|---|---|---|
+| 01 | [lab-01](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-01) | [text-review/lab-01](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-01) | Корпус, tokenizer і таблиці вимірювань. |
+| 02 | [lab-02](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-02) | [text-review/lab-02](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-02) | Додано таблиці №2 з наявних вимірювань. |
+| 03 | [lab-03](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-03) | [text-review/lab-03](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-03) | Збережено P@5; розмітка неповна й незалежно людиною не перевірена. |
+| 04 | [lab-04](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-04) | [text-review/lab-04](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-04) | CLI, типізація і тести; обов’язковий Release ще не опубліковано. |
+| 05 | [lab-05](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-05) | [text-review/lab-05](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-05) | Таблиці, графік, GIL і вимірювання Python 3.13t. |
+| 06 | [lab-06](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-06) | [text-review/lab-06](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-06) | Crawler і таблиці; виправлення ініціалізації HTTP-клієнта є в main. |
+| 07 | [lab-07](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-07) | [text-review/lab-07](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-07) | API/UI й локальні вимірювання; Docker і публічний сервіс не перевірено. |
+| 08 | [lab-08](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-08) | [text-review/lab-08](https://github.com/editlikeorigin-afk/findex-python-labs/tree/text-review/lab-08) | NumPy, семантичний пошук і медіа; розгортання та повний Scalene breakdown відсутні. |
 
 ## Що здається окремо
 
@@ -134,7 +131,7 @@ Notes №7 радять падіння startup без індексу, а Classro
    [пакет/опис](RELEASES.md). Тег v0.4.0 без Release цю вимогу не закриває.
 4. Для №7–8 — реальний hosted URL, health/logs і deployed oha після доступу до хостингу.
 5. Для №3/8 — людська перевірка relevance judgments; після змін розмітки потрібен новий, окремо
-   позначений розрахунок P@5. Початкові початкові результати не підміняються заднім числом.
+   позначений розрахунок P@5. Початкові результати не підміняються заднім числом.
 6. П'ятихвилинний захист і 2–3 Reflection: підготовлено [команди та відповіді](DEFENSE.md),
    проте особисте розуміння й усний виступ не можуть бути підтверджені автоматично.
 
@@ -142,6 +139,5 @@ Notes №7 радять падіння startup без індексу, а Classro
 
 Було досліджено вимоги всіх восьми етапів. Реалізовано та перевірено відтворення keyword-пошуку,
 підготовлено докази CI, матрицю вимог і матеріали захисту. Історію й теги збережено.
-Незакритими лишаються перелічені зовнішні дії, ручна розмітка, частина історичних доказів
-у незмінних тегах та неповний вибірковий Scalene breakdown. Готовність не прирівнюється
-до наявності коду або DOCX без цих обов'язкових результатів.
+Незакритими залишаються публікація Release, розгортання, незалежна перевірка розмітки,
+оновлення lab-тегів і повний вибірковий профіль Scalene.

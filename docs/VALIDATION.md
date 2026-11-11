@@ -2,6 +2,10 @@
 
 ## GitHub Actions
 
+Для редакції текстів `b8d3526b31f0dcf00b5c06ac21a4fc84a8b7a68d` перевірено
+[Actions №43037351425](https://github.com/editlikeorigin-afk/findex-python-labs/actions/runs/43037351425):
+`completed / success`. Код і залежності цієї редакції не змінювалися.
+
 Через GitHub API перевірено: [Checks №43021534036](https://github.com/editlikeorigin-afk/findex-python-labs/actions/runs/43021534036),
 `completed / success`, main `b02d1be2e94758d80bd902f0db0ca8703cb4e4e5`, 11.11.2026,
 завершення 12:35:40 UTC. Усі кроки sync, download_model, Ruff, Pyright, Mypy,
@@ -92,7 +96,16 @@ lab-01 — 11, lab-02 — 27, lab-03 — 51, lab-04 — 58, lab-05 — 63,
 lab-06 — 74, lab-07 — 85, lab-08 — 103; усі passed. Це різні snapshots, їх не можна додавати до числа 104.
 Для lab-08 модель надано окремо з перевіреного offline kit, як і для чистого клону.
 
-Для незмінних тегів lab-04 і lab-08 зібрано нові wheel/sdist. Python-файли wheel побайтово
-збігаються з source відповідного тегу. [v0.4.0 manifest](evidence/release-v0.4.0-manifest.json),
+Для версій 0.4.0 і 1.0.0 зібрано wheel/sdist з оновленою документацією відповідних
+гілок text-review. Python-файли wheel побайтово збігаються з кодом історичного тегу.
+Точний source ref і контрольні суми зазначено в маніфестах. [v0.4.0 manifest](evidence/release-v0.4.0-manifest.json),
 [v1.0.0 manifest](evidence/release-v1.0.0-manifest.json). Це локальна перевірка пакетів, не публікація Release.
 Оновлені DOCX: [CRC/XML/таблиці/код](evidence/reports-validation.json); файли залишаються поза Git.
+
+## Перевірка текстів і оформлення
+
+Для всіх восьми робіт збережено код і числові значення таблиць. У DOCX перевірено незмінність
+титулів, стилів, таблиць, формул, скріншотів, колонтитулів і початкових фрагментів коду.
+Усі 8 документів відкрито в docx-preview: зображення завантажились, помилок відображення немає.
+Перевірено 209 локальних посилань. [Результат перевірки](evidence/editorial-validation.json).
+Точну пагінацію Microsoft Word цим переглядом не перевірено.
