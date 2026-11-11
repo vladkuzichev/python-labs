@@ -1,16 +1,103 @@
 {
   "corpus_sha256": "89666d561d7368f5800bcac4b1a542326d92b8cd1ba7f55f454462e16cdf1bb0",
-  "provenance": "Judgments authored by the AI assistant after inspecting titles and docstrings, before comparing ranking systems. Not independent human student annotations. Incomplete relevance pools; exploratory evaluation only.",
+  "provenance": "Розмітка релевантності неповна; незалежну перевірку людиною не виконано. Оцінки P@5 мають попередній характер.",
   "queries": [
-    {"query":"event loop","relevant":[266,271,272,284,285],"intent":"Керування циклом asyncio"},
-    {"query":"json","relevant":[1349,1350,1351,1352,1353],"intent":"Серіалізація і десеріалізація JSON"},
-    {"query":"regular expression","relevant":[1813,1814,1815,1816,1820],"intent":"Регулярні вирази"},
-    {"query":"thread","relevant":[2060,2062,2085,2086,2087],"intent":"Потік і його життєвий цикл"},
-    {"query":"queue","relevant":[1785,1786,1790,1791,1789],"intent":"Операції черги"},
-    {"query":"cache","relevant":[1010],"intent":"LRU-кешування результатів функції"},
-    {"query":"gzip file","relevant":[1040,1041],"intent":"Стиснені файли gzip"},
-    {"query":"socket","relevant":[1912,1914,1915],"intent":"Мережеві сокети"},
-    {"query":"url parse","relevant":[2579,2580,2581,2586,2587],"intent":"Розбір URL"},
-    {"query":"file digest","relevant":[1044],"intent":"Контрольна сума файла"}
+    {
+      "query": "event loop",
+      "relevant": [
+        266,
+        271,
+        272,
+        284,
+        285
+      ],
+      "intent": "Керування циклом asyncio"
+    },
+    {
+      "query": "json",
+      "relevant": [
+        1349,
+        1350,
+        1351,
+        1352,
+        1353
+      ],
+      "intent": "Серіалізація і десеріалізація JSON"
+    },
+    {
+      "query": "regular expression",
+      "relevant": [
+        1813,
+        1814,
+        1815,
+        1816,
+        1820
+      ],
+      "intent": "Регулярні вирази"
+    },
+    {
+      "query": "thread",
+      "relevant": [
+        2060,
+        2062,
+        2085,
+        2086,
+        2087
+      ],
+      "intent": "Потік і його життєвий цикл"
+    },
+    {
+      "query": "queue",
+      "relevant": [
+        1785,
+        1786,
+        1790,
+        1791,
+        1789
+      ],
+      "intent": "Операції черги"
+    },
+    {
+      "query": "cache",
+      "relevant": [
+        1010
+      ],
+      "intent": "LRU-кешування результатів функції"
+    },
+    {
+      "query": "gzip file",
+      "relevant": [
+        1040,
+        1041
+      ],
+      "intent": "Стиснені файли gzip"
+    },
+    {
+      "query": "socket",
+      "relevant": [
+        1912,
+        1914,
+        1915
+      ],
+      "intent": "Мережеві сокети"
+    },
+    {
+      "query": "url parse",
+      "relevant": [
+        2579,
+        2580,
+        2581,
+        2586,
+        2587
+      ],
+      "intent": "Розбір URL"
+    },
+    {
+      "query": "file digest",
+      "relevant": [
+        1044
+      ],
+      "intent": "Контрольна сума файла"
+    }
   ]
 }
