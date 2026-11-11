@@ -15,8 +15,7 @@
     ],
     "readme_length": 1309,
     "markdown_links": [],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nНавчальна пошукова система над docstring стандартної бібліотеки CPython.\nЦе єдиний проєкт восьми лабораторних дисципліни «Програмування Python».\nКорпус: 2873 справжніх документи, зібрані scripts/prepare_corpus.py з Python 3.13.18, ліцензія PSF.\nДані не включаються в Git; підготовлений корпус міститься у комплекті здачі.\n\n## Лабораторна 1\n"
+    "corpus_script": true
   },
   {
     "tag": "lab-02",
@@ -41,8 +40,7 @@
     ],
     "readme_length": 1309,
     "markdown_links": [],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nНавчальна пошукова система над docstring стандартної бібліотеки CPython.\nЦе єдиний проєкт восьми лабораторних дисципліни «Програмування Python».\nКорпус: 2873 справжніх документи, зібрані scripts/prepare_corpus.py з Python 3.13.18, ліцензія PSF.\nДані не включаються в Git; підготовлений корпус міститься у комплекті здачі.\n\n## Лабораторна 1\n"
+    "corpus_script": true
   },
   {
     "tag": "lab-03",
@@ -73,8 +71,7 @@
     ],
     "readme_length": 2599,
     "markdown_links": [],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nНавчальна пошукова система над docstring стандартної бібліотеки CPython.\nЦе єдиний проєкт восьми лабораторних дисципліни «Програмування Python».\nКорпус: 2873 справжніх документи, зібрані scripts/prepare_corpus.py з Python 3.13.18, ліцензія PSF.\nДані не включаються в Git; підготовлений корпус міститься у комплекті здачі.\n\n## Лабораторна 1\n"
+    "corpus_script": true
   },
   {
     "tag": "lab-04",
@@ -110,8 +107,7 @@
     ],
     "readme_length": 2599,
     "markdown_links": [],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nНавчальна пошукова система над docstring стандартної бібліотеки CPython.\nЦе єдиний проєкт восьми лабораторних дисципліни «Програмування Python».\nКорпус: 2873 справжніх документи, зібрані scripts/prepare_corpus.py з Python 3.13.18, ліцензія PSF.\nДані не включаються в Git; підготовлений корпус міститься у комплекті здачі.\n\n## Лабораторна 1\n"
+    "corpus_script": true
   },
   {
     "tag": "lab-05",
@@ -158,8 +154,7 @@
     "markdown_links": [
       "docs/parallel_speedup.png"
     ],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nНавчальна пошукова система над docstring стандартної бібліотеки CPython.\nЦе єдиний проєкт восьми лабораторних дисципліни «Програмування Python».\nКорпус: 2873 справжніх документи, зібрані scripts/prepare_corpus.py з Python 3.13.18, ліцензія PSF.\nДані не включаються в Git; підготовлений корпус міститься у комплекті здачі.\n\n## Лабораторна 1\n"
+    "corpus_script": true
   },
   {
     "tag": "lab-06",
@@ -214,8 +209,7 @@
     "markdown_links": [
       "docs/parallel_speedup.png"
     ],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nНавчальна пошукова система над docstring стандартної бібліотеки CPython.\nЦе єдиний проєкт восьми лабораторних дисципліни «Програмування Python».\nКорпус: 2873 справжніх документи, зібрані scripts/prepare_corpus.py з Python 3.13.18, ліцензія PSF.\nДані не включаються в Git; підготовлений корпус міститься у комплекті здачі.\n\n## Лабораторна 1\n"
+    "corpus_script": true
   },
   {
     "tag": "lab-07",
@@ -283,8 +277,7 @@
     "markdown_links": [
       "docs/parallel_speedup.png"
     ],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nНавчальна пошукова система над docstring стандартної бібліотеки CPython.\nЦе єдиний проєкт восьми лабораторних дисципліни «Програмування Python».\nКорпус: 2873 справжніх документи, зібрані scripts/prepare_corpus.py з Python 3.13.18, ліцензія PSF.\nДані не включаються в Git; підготовлений корпус міститься у комплекті здачі.\n\n## Лабораторна 1\n"
+    "corpus_script": true
   },
   {
     "tag": "lab-08",
@@ -408,7 +401,6 @@
       "docs/demo.webm",
       "docs/demo.gif"
     ],
-    "corpus_script": true,
-    "readme_excerpt": "# findex\n\nПошук у 2873 документах стандартної бібліотеки Python: CLI, вебінтерфейс, BM25 та семантичний MiniLM.\n\n**Локальна адреса:** http://127.0.0.1:8010/ під час поточного запуску. Публічна адреса не створювалася: користувач заборонив публікацію.\n\n![Пошук у findex](docs/demo.gif)\n\n- Корпус: 2873 документів, 190517 токенів, 1,513,665 байтів.\n- p9"
+    "corpus_script": true
   }
 ]

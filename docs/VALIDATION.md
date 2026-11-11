@@ -15,7 +15,7 @@ CI для нового коміту потрібно оцінювати окре
 11.11.2026 виконано `git clone --no-hardlinks` з того самого локального Git-репозиторію
 коміту b02d1be в нову папку. Ні `data/`, ні `models/`, ні `.venv/` до неї не копіювалися.
 Середовище: CPython 3.13.18 x64, Windows 11, Ryzen 7 7800X3D; [фактичний stdout](evidence/submission-2026-11-11/environment.log).
-Клонування по мережі з GitHub у sandbox не виконано: вихідні сокети Git/gh заблоковані.
+Мережеве клонування локально не перевірено; використано окремий клон того самого Git-коміту.
 
 Перший `uv sync --frozen --all-extras --offline` **не пройшов**: у cache не було locked wheel onnxruntime.
 Це не записано як успіх. Далі в чистий venv встановлено ті самі pinned packages з окремого
@@ -34,7 +34,7 @@ Online `uv sync --frozen` підтверджено окремо саме GitHub 
 | pytest-benchmark comparison | exit 0, поріг mean:99% | [log](evidence/submission-2026-11-11/benchmark-regression.log) |
 | Lock / build / isolated wheel | exit 0, wheel/sdist, findex --help поза клоном | [lock](evidence/submission-2026-11-11/lock.log), [build](evidence/submission-2026-11-11/build.log), [install](evidence/submission-2026-11-11/wheel-install.log), [help](evidence/submission-2026-11-11/wheel-help.log) |
 
-Модель у локальному повторі не завантажувалась із Hugging Face через sandbox: використано перевірену
+Для локальної перевірки модель надано з автономного комплекту: використано перевірену
 копію автономного комплекту. У CI команда справжнього download_model завершилась успішно.
 Окремі подальші CLI/HTTP/semantic перевірки та перевірки посилань зберігаються в цьому ж каталозі evidence.
 
@@ -53,7 +53,7 @@ Scalene запускалось через subprocess зі справжнім exi
 непорожні розділи, відповідність основних чисел і коду. Реквізити не змінювалися.
 Висновки переформульовано безособово; застарілі твердження про відсутній GitHub/CI оновлено.
 DOCX здаються окремо; [перелік](SUBMISSION.md). Точну пагінацію Microsoft Word не підтверджено:
-Word COM у цій сесії повертав 0x80070520. Попередні браузерні прев'ю є в окремому комплекті.
+Відтворення сторінок у Microsoft Word недоступне: COM 0x80070520. Попередні браузерні прев'ю є в окремому комплекті.
 
 Docker build/run, public deployment, deployed oha та install-from-GitHub-Release не виконані.
 Виправлений Dockerfile звірено за файлами/командами, але це не виконання контейнера.

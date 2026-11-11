@@ -1,6 +1,6 @@
 # Походження доказів
 
-- `github-before.json`, `github-actions-known.json` — фактичні відповіді/резюме GitHub API під час аудиту;
+- `github-before.json`, `github-actions-known.json` — фактичні відповіді/резюме GitHub API під час перевірки;
   green run стосується конкретного b02d1be, а не автоматично всіх майбутніх комітів.
 - `methods-check.json` — Git blob SHA локальних методичок та notes звірено з GitHub викладача.
 - `tag-audit.json` — список файлів незмінних тегів, отриманий локальним git ls-tree;

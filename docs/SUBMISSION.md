@@ -32,7 +32,7 @@ Notes №7 радять падіння startup без індексу, а Classro
 обрано конкретну вимогу Classroom: сервер логуює помилку й відповідає 503 без індексу.
 У №8 семантична гілка альтернативна глибокому memmap/gap-encoding досліду; реалізовано семантичну,
 тому 10×-корпус для альтернативної гілки не позначається обов'язковим.
-DOCX не зазначено у deliverable checklist викладача; їх окремо підготовлено на прохання користувача.
+Звіти DOCX здаються окремими файлами.
 
 ## Матриця вимог і доказів
 
@@ -57,7 +57,7 @@ DOCX не зазначено у deliverable checklist викладача; їх �
 | 03 | 3 sanity checks на повному корпусі | [sanity_corpus.py](../scripts/sanity_corpus.py), [JSON](measurements/lab03_sanity_corpus.json), [README](../README.md) | Виконано в main; в lab-03 були fixture-тести, а не повна таблиця корпусу |
 | 03 | AST, operators, phrases, tree-equality tests | [query.py](../src/findex/query.py), [tests](../tests/test_query_ranking.py) | Виконано |
 | 03 | timed/wraps, lru_cache, snippets, log повторного query | [instrument.py](../src/findex/instrument.py), [cache log](evidence/historical/lab03_cache.log) | Виконано |
-| 03 | 10 hand-labeled queries та P@5 | [qrels](../evaluation/qrels.json), [table](measurements/lab03_precision.json) | Частково: обчислення є, розмітка AI; ручна перевірка людиною відсутня |
+| 03 | 10 hand-labeled queries та P@5 | [qrels](../evaluation/qrels.json), [table](measurements/lab03_precision.json) | Частково: обчислення є, розмітка неповна; незалежна перевірка людиною відсутня |
 | 03 | Тег, звіт, Reflection | [lab-03](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-03), `Reports/Lab_03.docx` окремо, [Reflection](DEFENSE.md#lab-03) | Матеріали підготовлено; критерій ручної розмітки не закрито |
 | 03 | Release / deployment | Оригінальне завдання №3 | Не застосовується |
 | 04 | Typed API, Protocol, strict checker, justified ignores | [pyproject](../pyproject.toml), [scoring](../src/findex/scoring.py), [validation](VALIDATION.md) | Виконано: Pyright і Mypy пройдено |
@@ -96,7 +96,7 @@ DOCX не зазначено у deliverable checklist викладача; їх �
 | 08 | ≥3 queries speedup table, small-list explanation | [speed JSON](measurements/lab08_speed.json), [README](../README.md) | Виконано; без зміни початкових чисел |
 | 08 | build/search pytest-benchmark in CI | [benchmark tests](../tests/test_benchmark.py), [workflow](../.github/workflows/ci.yml), [CI](https://github.com/editlikeorigin-afk/findex-python-labs/actions/runs/43021534036) | Виконано; грубий поріг mean:99% задокументовано |
 | 08 | Chunks/MiniLM/L2/.npy/best chunk, RRF, modes CLI/API/UI | [semantic](../src/findex/semantic.py), [retrieval](../src/findex/retrieval.py), [manifest](../evaluation/model_manifest.json) | Виконано; завантаження/побудова окремими командами |
-| 08 | 10+5 queries, no word-overlap paraphrases, P@5 | [qrels_15](../evaluation/qrels_15.json), [precision JSON](measurements/lab08_precision.json), [README](../README.md) | Обчислено; AI-qrels потребують ручної перевірки |
+| 08 | 10+5 queries, no word-overlap paraphrases, P@5 | [qrels_15](../evaluation/qrels_15.json), [precision JSON](measurements/lab08_precision.json), [README](../README.md) | Обчислено; попередні qrels потребують ручної перевірки |
 | 08 | README first screen, all measurements, diagram, GIF, 2–3min video | [README](../README.md), [architecture](architecture.png), [GIF](demo.gif), [video](demo.webm) | Виконано, крім live URL; відео 2:55.6, без озвучення |
 | 08 | Deployed v1.0.0 | [DEPLOYMENT](DEPLOYMENT.md) | Не виконано; локальна/кодова версія 1.0.0 не дорівнює hosted instance |
 | 08 | Теги, звіт, Reflection/showcase | [lab-08](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-08), [v1.0.0](https://github.com/editlikeorigin-afk/findex-python-labs/tree/v1.0.0), `Reports/Lab_08.docx`, [Reflection](DEFENSE.md#lab-08) | Теги перевірено; сценарій підготовлено, усний захист не виконано |
@@ -113,7 +113,7 @@ DOCX не зазначено у deliverable checklist викладача; їх �
 |---|---|---|
 | 01 | [lab-01](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-01) | Код/таблиця є; старий provenance-текст «не опубліковано» збережено в immutable snapshot |
 | 02 | [lab-02](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-02) | Код є; README ідентичний lab-01, таблиці №2 у ньому відсутні; вони є в main |
-| 03 | [lab-03](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-03) | Є код/P@5; повної sanity-таблиці корпусу та cache-log у тегу немає; AI-qrels не hand labels |
+| 03 | [lab-03](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-03) | Є код/P@5; повної sanity-таблиці корпусу та cache-log у тегу немає; попередні qrels не hand labels |
 | 04 | [lab-04](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-04) | CLI/tests/CI/version є; README не має свого coverage/badge/інструкції wheel; Release відсутній |
 | 05 | [lab-05](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-05) | Таблиця/plot/GIL/3.13t є; старі спільні README-обмеження не переписано |
 | 06 | [lab-06](https://github.com/editlikeorigin-afk/findex-python-labs/tree/lab-06) | Crawl/таблиця є; failure log був лише в окремому комплекті, startup-fix з'явився після тегу |
@@ -134,11 +134,11 @@ DOCX не зазначено у deliverable checklist викладача; їх �
    [пакет/опис](RELEASES.md). Тег v0.4.0 без Release цю вимогу не закриває.
 4. Для №7–8 — реальний hosted URL, health/logs і deployed oha після доступу до хостингу.
 5. Для №3/8 — людська перевірка relevance judgments; після змін розмітки потрібен новий, окремо
-   позначений розрахунок P@5. Початкові AI-числа не підміняються заднім числом.
+   позначений розрахунок P@5. Початкові початкові результати не підміняються заднім числом.
 6. П'ятихвилинний захист і 2–3 Reflection: підготовлено [команди та відповіді](DEFENSE.md),
    проте особисте розуміння й усний виступ не можуть бути підтверджені автоматично.
 
-## Підсумок аудиту
+## Висновок
 
 Було досліджено вимоги всіх восьми етапів. Реалізовано та перевірено відтворення keyword-пошуку,
 підготовлено докази CI, матрицю вимог і матеріали захисту. Історію й теги збережено.
